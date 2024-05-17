@@ -1,53 +1,44 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Perfil corvo</title>
-        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
-        <link rel="stylesheet" href="css/style.css">
-        <meta charset="utf-8">
-    </head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="https://kit.fontawesome.com/cf6fa412bd.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="btnForms">
+            <div class="btnColor"></div>
+            <button id="btnEntrar">Entrar</button>
+            <button id="btnCadastrar">Cadastrar</button>
+        </div>
 
-    <body>
-        <br/><br/>
-        <section class="perfil-descricao">
-            <div class="center">
-                <div class="img-perfil-wraper">
-                    <div style="background-image: url('./assets/imagens/imagemPerfil.jpg');" class="img-perfil"></div>
-                <div class="descricao-perfil">
-                    <h3>Nome do usuario</h3>
-                    <p>#3</p>
-                </div><!--descricao-perfil-->
-            
-        </section><!--perfil-descricao-->
-        <section class="feed">
-            <div style="max-width: 100%;" class="center">
-                <div class="line-feed">
-                    <div aba="publicacoes" class="single-line-name">
-                        <div style="display: block;" class="line-marcacao"></div>
-                        <p style="font-weight: bold;">Corvos</p>
-                    </div>
-                    </div>
-                </div>
+        <form id="entrar">
+            <input type="text" placeholder="Email" required />
+            <i class="fas fa-envelope iEmail"></i>
+            <input type="password" placeholder="Senha" required />
+            <i class="fas fa-lock iPassword"></i>
+            <div class="divCheck">
+                <input type="checkbox" />
+                <span>Lembrar Senha?</span>
             </div>
-        </section><!--feed-->
+            <button type="submit" class="todos">Entrar</button>
+        </form>
 
-        <section id="publicacoes">
-            <div style="max-width: 1800px" class="center">
-                <div style="background-image: url('./assets/imagens/CorvoGrid.jpg');" class="publicacao-single"></div>
-                <div style="background-image: url('./assets/imagens/CorvoGrid.jpg');" class="publicacao-single"></div>
-                <div style="background-image: url('./assets/imagens/CorvoGrid.jpg');" class="publicacao-single"></div>
-                <div style="background-image: url('./assets/imagens/CorvoGrid.jpg');" class="publicacao-single"></div>
-                <div style="background-image: url('./assets/imagens/CorvoGrid.jpg');" class="publicacao-single"></div>
-                <div style="background-image: url('./assets/imagens/CorvoGrid.jpg');" class="publicacao-single"></div>
-                <div style="background-image: url('./assets/imagens/CorvoGrid.jpg');" class="publicacao-single"></div>
-                <div style="background-image: url('./assets/imagens/CorvoGrid.jpg');" class="publicacao-single"></div>
-                <div style="background-image: url('./assets/imagens/CorvoGrid.jpg');" class="publicacao-single"></div>
-                <div style="background-image: url('./assets/imagens/CorvoGrid.jpg');" class="publicacao-single"></div>
-                <div style="background-image: url('./assets/imagens/CorvoGrid.jpg');" class="publicacao-single"></div>
-                <div style="background-image: url('./assets/imagens/CorvoGrid.jpg');" class="publicacao-single"></div>
-                
-            </div>
-        </section>
-    </body>
+        <form id="cadastrar">
+            <input type="text" placeholder="Email" required />
+            <i class="fas fa-envelope iEmail"></i>
+            <input type="text" placeholder="Usuario" required />
+            <i class="fas fa-user uSer"></i>
+            <input type="password" placeholder="Senha" required />
+            <i class="fas fa-lock iPassword2"></i>
+            <button type="submit" class="todos">Cadastrar </button>
+        </form>
+    </div>
+
+    <script src="./js/index.js"></script>
+</body>
 </html>
