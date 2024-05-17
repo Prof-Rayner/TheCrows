@@ -8,9 +8,11 @@
 }
  
 body {
-    background-image: url(../assets/imagens/BACK.jpg);
-    background-size: 100% 100%;
-    width: 100vw;
+    background-image: url(../assets/imagens/fundo_teste_2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    backdrop-filter: blur(3px);
+    width: 100%;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -18,7 +20,9 @@ body {
 }
  
 .container {
-    background-color:  rgba(12, 10, 10, 0.6);
+    background-color: transparent;
+    backdrop-filter: blur(7px);
+    color: #fff;
     padding: 6px;
     width: 350px;
     height: 450px;
@@ -28,7 +32,7 @@ body {
     position: relative;
     overflow: hidden;
     border-radius: 10px;
-    box-shadow: 0 0 7px 0 #3e3b3b;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
     }
  
 form {
@@ -52,14 +56,14 @@ form {
     border: none;
     position: relative;
     padding: 10px 29px;
-    color: #ffffff;
+    color: #000;
 }
  
 .btnColor {
     position: absolute;
     width: 108px;
     height: 100%;
-    background: linear-gradient(to left, #ffffff, #000000);
+    background: linear-gradient(to left, #ffffff -10%, #fff -70%, cyan);
     border-radius: 30px;
     transition: .3s;
 }
@@ -98,6 +102,7 @@ button[type="submit"] {
  
 #entrar {
     left: 25px;
+    color: #000;
 }
  
 #cadastrar {
