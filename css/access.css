@@ -6,7 +6,7 @@
   box-sizing: border-box;
   font-family: 'poppins', sans-serif;
 }
- 
+
 body {
     background-image: url(../assets/imagens/fundo_teste_2.jpg);
     background-size: cover;
@@ -141,4 +141,30 @@ i {
        
     }
  
+}
+
+.snow {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.snowflake {
+    position: absolute;
+    font-size: 24px;
+    color: #fff;
+    animation: fall linear infinite;
+    filter: blur(5px);
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-900px);
+
+    }
+    100% {
+        transform: translateY(900px);
+        transform: translateX(-700px);
+    }
 }
