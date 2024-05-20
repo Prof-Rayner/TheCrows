@@ -16,6 +16,8 @@ document.querySelector('#btnCadastrar')
     btnColor.style.left = "110px"
 })
 
+
+
 // Função para criar os flocos de neve
 function createSnowFlake() {
   const snowFlake = document.createElement('div');

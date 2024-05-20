@@ -20,7 +20,7 @@ body {
 }
  
 .container {
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, .2);
     backdrop-filter: blur(7px);
     color: #fff;
     padding: 6px;
@@ -67,6 +67,7 @@ form {
     border-radius: 30px;
     transition: .3s;
 }
+
  
 input[type="text"], input[type="password"] {
     border: none;
