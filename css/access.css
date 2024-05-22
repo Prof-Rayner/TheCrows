@@ -20,7 +20,7 @@ body {
 }
  
 .container {
-    background-color: rgba(0, 0, 0, .2);
+    background-color: rgba(255, 255, 255, .4);
     backdrop-filter: blur(7px);
     color: #fff;
     padding: 6px;
@@ -32,7 +32,7 @@ body {
     position: relative;
     overflow: hidden;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 1);
     }
  
 form {
@@ -47,7 +47,9 @@ form {
     margin-top: 40px;
     position: relative;
     border-radius: 30px;
-    box-shadow: 0 0 7px 0 rgb(10, 10, 10);
+    box-shadow: 0 0 7px 0 rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, .1);
+    width: 68%;
 }
  
 .btnForms button {
@@ -56,16 +58,24 @@ form {
     border: none;
     position: relative;
     padding: 10px 29px;
-    color: #000;
+    color: #fff;
+}
+
+.btns {
+    background-color:#2c8be4;
 }
  
 .btnColor {
     position: absolute;
     width: 108px;
     height: 100%;
-    background: linear-gradient(to left, #ffffff -10%, #fff -70%, cyan);
+    background-color: #2c8be4;
     border-radius: 30px;
     transition: .3s;
+}
+
+.btnCadastrar {
+    
 }
 
  
@@ -79,8 +89,7 @@ input[type="text"], input[type="password"] {
 }
  
 button[type="submit"] {
-    background: rgb(27, 27, 27);
-    color: white;
+    color: #fff;
     border-radius: 30px;
     width: 100%;  
     border: none;
@@ -90,9 +99,24 @@ button[type="submit"] {
     margin-top: 40px;
     cursor: pointer;
 }
- 
+
+.icon {
+    display: flex;
+}
+
+i {
+    color: #000;
+    font-size: 19px;
+}
+
+.todos {
+    box-shadow: 0 0 7px 0 rgb(255, 255, 255);
+}
+
 .todos:hover{
-    background: #3e3d3d;
+    background: #8ebfec;
+    
+
 }
 .divCheck {
     margin: 10px 0 0 5px;
