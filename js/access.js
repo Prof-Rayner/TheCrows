@@ -28,6 +28,7 @@ const email02 = document.getElementById('email_02');
 const senha02 = document.getElementById('senha_02');
 const confirmar_senha = document.getElementById("confirma_senha");
 
+
 nome.addEventListener('input', () => {
   if(nome.value.length <3){
       nome_error.textContent = 'Nome invalido';
@@ -36,6 +37,18 @@ nome.addEventListener('input', () => {
   }
 });
 
+// email02.addEventListener('input', () =>{
+//       var exclude=/[^@-.w]|^[_@.-]|[._-]{2}|[@.]{2}|(@)[^@]*1/;
+//       var check=/@[w-]+./;
+//       var checkend=/.[a-zA-Z]{2,3}$/;
+//       if(((email02.search(exclude) != -1)||(email.search(check)) == -1)||(email.search(checkend) == -1)){email_error.textContent = 'Email inválido, por favor rescreva ou tente novamente!';
+  
+//       } else {email_error.textContent = '';
+  
+//       }
+  
+  
+// });
 
 senha02.addEventListener('input', () => {
   if(senha02.value.length <8){
