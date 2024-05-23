@@ -21,11 +21,11 @@ const nome = document.getElementById('user');
 const nome_error = document.getElementById('nome_error');
 const email01 = document.getElementById('email_01');
 const email_error = document.querySelector('email_error');
-const senha01 = document.getElementById('senha_01');
-const senha_error = document.querySelector('password_error');
+const senha_01 = document.getElementById('senha_01');
+const senha_error_2 = document.getElementById('password_error_2');
 
 const email02 = document.getElementById('email_02');
-const senha02 = document.getElementById('senha_02');
+const senha_02 = document.getElementById('senha_02');
 const confirmar_senha = document.getElementById("confirma_senha");
 
 
@@ -50,11 +50,11 @@ nome.addEventListener('input', () => {
   
 // });
 
-senha02.addEventListener('input', () => {
-  if(senha02.value.length <8){
-      senha_error.textContent = 'Senha muito curta';
+senha_02.addEventListener('input', () => {
+  if(senha_02.value.length <8){
+      senha_error_2.textContent = 'Senha muito curta';
   } else {
-      senha_error.textContent = ''
+      senha_error_2.textContent = ''
   }
 });
 
