@@ -2,6 +2,7 @@ var formSignin = document.querySelector('#entrar')
 var formSignup = document.querySelector('#cadastrar')
 var btnColor = document.querySelector('.btnColor')
 
+
 document.querySelector('#btnEntrar')
   .addEventListener('click', () => {
     formSignin.style.left = "25px"
@@ -15,6 +16,45 @@ document.querySelector('#btnCadastrar')
     formSignup.style.left = "25px"
     btnColor.style.left = "110px"
 })
+
+const nome = document.getElementById('user');
+const nome_error = document.getElementById('nome_error');
+const email01 = document.getElementById('email_01');
+const email_error = document.querySelector('email_error');
+const senha01 = document.getElementById('senha_01');
+const senha_error = document.querySelector('password_error');
+
+const email02 = document.getElementById('email_02');
+const senha02 = document.getElementById('senha_02');
+const confirmar_senha = document.getElementById("confirma_senha");
+
+nome.addEventListener('input', () => {
+  if(nome.value.length <3){
+      nome_error.textContent = 'Nome invalido';
+  } else {
+      nome_error.textContent  = ''
+  }
+});
+
+
+senha02.addEventListener('input', () => {
+  if(senha02.value.length <8){
+      senha_error.textContent = 'Senha muito curta';
+  } else {
+      senha_error.textContent = ''
+  }
+});
+
+confirmar_senha.addEventListener('input', () => {
+  if(senha02.value !== confirmar_senha.value){
+      senha_error_confirm.textContent = 'As senhas não coincidem.';
+
+  } else {
+      senha_error_confirm.textContent = ''
+  }
+  
+});
+
 
 
 

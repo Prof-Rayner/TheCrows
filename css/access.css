@@ -25,7 +25,7 @@ body {
     color: #fff;
     padding: 6px;
     width: 350px;
-    height: 450px;
+    height: 490px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -83,7 +83,7 @@ input[type="text"], input[type="password"] {
     outline: none;
     width: 100%;
 }
- 
+
 button[type="submit"] {
     color: #fff;
     border-radius: 30px;
@@ -96,14 +96,6 @@ button[type="submit"] {
     cursor: pointer;
 }
 
-.icon {
-    display: flex;
-}
-
-i {
-    color: #000;
-    font-size: 19px;
-}
 
 .todos {
     box-shadow: 0 0 7px 0 rgb(255, 255, 255);
@@ -130,8 +122,25 @@ i {
 #cadastrar {
     left: 450px;
 }
- 
+
+.bxs-envelope {
+    bottom: 80.6%;
+
+}
+
+.lock-login {
+    bottom: 61.6%;
+}
+
+.lock-cadastro {
+    bottom: 23.7%;
+    font-size: 25px;
+    left: -1%;
+}
+
 i {
+    color: #000;
+    font-size: 19px;
     position: absolute;
     left: 0;
     padding: 10px 10px;
@@ -151,6 +160,10 @@ i {
  
 .iPassword2 {
     top: 190px;
+}
+
+span {
+    font-size: 16px;
 }
  
 @media screen and (max-width: 390px) {
