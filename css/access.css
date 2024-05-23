@@ -74,6 +74,11 @@ form {
     transition: .3s;
 }
 
+.btnColor:focus {
+    background-image: url(../assets/imagens/congelamento_teste.avif);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
  
 input[type="text"], input[type="password"] {
     border: none;
