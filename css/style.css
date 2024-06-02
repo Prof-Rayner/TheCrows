@@ -1,6 +1,3 @@
-css
-
-
 *{
     margin: 0;
     padding: 0;
@@ -80,4 +77,61 @@ section.feed{
 
 .publicacao-single {
     width: 66.6%;
+}
+
+
+/* popup */
+
+
+
+.center #blur.activate{
+    filter: blur(10px);
+    pointer-events: none;
+    user-select: none;
+}
+
+#info{
+    background-color: #909090;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 500px;
+    height: 300px;
+    padding: 20px;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+#info img{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#info h2, #info p{
+    color: #000;
+    text-align: center;
+    text-decoration: none;
+    list-style-type: none;
+    line-height: 150%;
+    font-size: 17px;
+    padding-left: 40px;
+}
+#info #sair{
+    color: #fff;
+    text-decoration: none;
+    text-align: right;
+}
+
+
+#info.activate{
+    bottom: 50%;
+    opacity: 1;
+    visibility: visible;
+    transition: 1s;
+    height:450px ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
