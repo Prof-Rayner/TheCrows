@@ -7,6 +7,7 @@
 
 body{
     background-color: rgb(245,245,245);
+    font-size: 62.5%;
 }
 
 .perfil-descricao{
@@ -71,57 +72,75 @@ section.feed{
     box-shadow: 0 0 10px rgba(0, 0, 0, .1);
     display: flex;
     flex-direction: column;
+    justify-content:center ;
     align-items: center;
-    padding: 10px;
+    border-radius: 5px;
 }
 a{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content:center ;
+    
 }
 
 .publicacao-single {
-    width: 66.6%;
+    width: 97%;
+    height: 97%;
+    border-radius: 5px;
 }
 
+@media screen and (min-width: 1280px) {
+    body{
+        background-color: rgb(245,245,245);
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        max-width: 40%;
+        height: 100vh;
+    }
+}
 
 
 
 /* popup */
 
 #blur.activate{
-    filter: blur(10px);
-    pointer-events: none; 
-    user-select: none;
+    filter: blur(20px);
 }
 
+hr{
+    width: 105%;
+    border-color: #000;
+}
 #info{
-    background-color: #909090;
+    background-color: #fff;
     position: fixed;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    width: 500px;
-    height: 300px;
-    padding: 20px;
+    width: 80%;
+    height: 90%;
+    padding: 50px;
     visibility: hidden;
     opacity: 0;
     transition: 0.5s;
+    border-radius: 10px;
 }
 #info img{
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+.foto{
+    width: 40vh;
+    height: 40vh;
 }
 #info h2, #info p{
     color: #000;
     text-align: center;
-    text-decoration: none;
-    list-style-type: none;
-    line-height: 150%;
-    font-size: 17px;
-    padding-left: 40px;
+    font-size: 30px;
+    padding: 50px;
 }
 #info a{
     color: #fff;
@@ -135,8 +154,34 @@ a{
     opacity: 1;
     visibility: visible;
     transition: 1s;
-    height: 430px ;
+    height: 80%;
+    width: 70%;
     display: flex;
+    padding: 20px;
     flex-direction: column;
     align-items: center;
 }
+
+.container-info{
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    height: 130vh;
+    width: 80vh;
+    top: 0;
+}
+
+
+
+@media screen and (max-width: 1280px){
+    .foto{
+        width: 35vh;
+        height: 35vh;
+    }
+}
+@media screen and (max-width: 800px){
+    .foto{
+        width: 10vh;
+        height: 20vh;
+    }
+}
+
