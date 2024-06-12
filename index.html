@@ -9,8 +9,8 @@
     <meta charset="utf-8">
 </head>
 
-<body>
-    <div id="blur">
+<body >
+    <div id="blur" onclick="toggle">
         <section class="perfil-descricao">
             <img src="assets/imagens/imagemPerfil.jpg" alt="Sua imagem de perfil" class="img-perfil">
             <ul class="descricao-perfil">
@@ -80,22 +80,21 @@
                             class="publicacao-single"></a>
                 </div>
             </div>
+        </section>
     </div>
-    <div class="container-info" >
-        <a href="#" onclick="toggle()"><div id="info"></div></a>
-            <h2>Corvo</h2>
-            <div class="foto">
+    <div class="container-info">
+        <a href="#" onclick="toggle()">
+            <div id="info">
+                <h2>Corvo</h2>
                 <img src="assets/imagens/CorvoGrid.jpg" alt="Imagem de um corvo">
+                <br>
+                <hr>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <button onclick="toogle()" id="sair"> sair</button>
             </div>
-            <br>
-            <hr>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            <br><br>
-            <a href="#" onclick="toggle()"><button type="submit"></button></a>
-        </div>
+        </a>
     </div>
     <script src="js/script.js"></script>
-    </section>
 </body>
 
 </html>

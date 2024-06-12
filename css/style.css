@@ -106,6 +106,27 @@ a{
 
 /* popup */
 
+
+/*.container-info{
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 1000px;
+    height: 1000px;
+    overflow: auto;
+    background-color: blueviolet;
+}
+
+.info{
+    background-color: #fff;
+    margin: 30px;
+    padding: 20px;
+    border-radius: 4px;
+    width: 70%;
+}
+*/
+
 #blur.activate{
     filter: blur(20px);
 }
@@ -127,20 +148,18 @@ hr{
     opacity: 0;
     transition: 0.5s;
     border-radius: 10px;
+    display: none; 
 }
 #info img{
-    height: 100px;
-    width: 100px;
+    height: 40vh;
+    width: 40vh;
 }
-.foto{
-    width: 40px;
-    height: 40px;
-}
+
 #info h2, #info p{
     color: #000;
     text-align: center;
     font-size: 30px;
-    padding: 50px;
+    padding: 30px;
 }
 #info a{
     color: #fff;
@@ -160,16 +179,25 @@ hr{
     padding: 20px;
     flex-direction: column;
     align-items: center;
+    
 }
 
 .container-info{
-    background-color: rgba(0, 0, 0, 0.5);
     position: fixed;
-    height: 130vh;
-    width: 80vh;
-    top: 0;
+    height: 30vh;
+    width: 50vh;
+}
+.container-info.activate{
+    opacity: 1;
 }
 
+#info #sair{
+    font-size: 28px;
+    font-weight: bold;
+    border-radius: 12px;
+    width: 20%;
+    cursor: pointer;
+}
 
 
 @media screen and (max-width: 1280px){
@@ -183,5 +211,4 @@ hr{
         width: 10vh;
         height: 20vh;
     }
-}
-
+} 
