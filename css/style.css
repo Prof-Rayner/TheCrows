@@ -129,12 +129,12 @@ hr{
     border-radius: 10px;
 }
 #info img{
-    height: 100%;
-    width: 100%;
+    height: 100px;
+    width: 100px;
 }
 .foto{
-    width: 40vh;
-    height: 40vh;
+    width: 40px;
+    height: 40px;
 }
 #info h2, #info p{
     color: #000;
