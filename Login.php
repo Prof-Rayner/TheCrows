@@ -1,3 +1,13 @@
+//<?php
+// session_start();
+// if ($user && password_verify($senha, $user['Password'])) {
+//     $_SESSION['usuario'] = $user['Email'];
+//     $_SESSION['start_time'] = time(); 
+//     header('location: index.php'); 
+//     exit;
+//}
+//?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -14,10 +24,7 @@
     <script defer src="./js/snowFlake.js"></script>
 </head>
 
-<body>
-    <!-- container div -->
     <div class="container">
-
         <div class="btn">
             <div class="slider"></div>
             <button class="login">Entrar</button>
@@ -25,52 +32,44 @@
         </div>
 
         <div class="form-section">
-
             <!-- Form de Login -->
-            <form action="./php/login.php" method="post">
+            <form action="./api/login.php" id="loginForm" method="POST">
                 <div class="inputWithIcon">
-                    <input type="email" id="loginEmail" name="email" placeholder="Email" required />
+                    <input type="email" id="loginEmail" name="Email" class="form-control" placeholder="Digite seu E-mail" required>
                     <i class="bi bi-envelope-fill"></i>
                 </div>
-
                 <div class="inputWithIcon">
-                    <input type="password" id="loginPassword" class="password " placeholder="Senha" required>
+                    <input type="password" id="loginPassword" name="Senha" class="form-control" placeholder="Digite sua Senha" required>
                     <i class="bi bi-lock-fill"></i>
                 </div>
-
                 <div class="divCheck">
-                    <input type="checkbox" />
+                    <input type="checkbox" id="rememberMe" name="rememberMe">
                     <span>Lembrar Senha?</span>
                 </div>
-
-                <button type="submit">Entrar</button>
+                <button type="submit" class="btn btn-primary w-100">Entrar</button>
             </form>
 
             <!-- Form de Cadastro -->
-            <form>
+            <form action="./api/cadastro.php" id="registerForm" method="POST" class="d-none">
                 <div class="inputWithIcon">
-                    <input type="text" id="signName" placeholder="Nome Completo" required>
+                    <input type="text" id="signName" name="Nome" class="form-control" placeholder="Digite seu Nome" required>
                     <i class="bi bi-person-fill"></i>
                 </div>
                 <div class="inputWithIcon">
-                    <input type="email" id="signEmail" placeholder="exemplo@email.com" required>
+                    <input type="email" id="signEmail" name="Email" class="form-control" placeholder="Digite seu E-mail" required>
                     <i class="bi bi-envelope-fill"></i>
                 </div>
-
                 <div class="inputWithIcon">
-                    <input type="password" id="signPassword" placeholder="Senha" required>
+                    <input type="password" id="signPassword" name="Senha" class="form-control" placeholder="Digite sua Senha" required>
                     <i class="bi bi-lock-fill"></i>
                 </div>
-
                 <div class="inputWithIcon">
-                    <input type="password" id="signPassword2" placeholder="Confirmar Senha" required>
+                    <input type="password" id="signPassword2" name="ConfirmarSenha" class="form-control" placeholder="Confirme sua Senha" required>
                     <i class="bi bi-lock-fill"></i>
                 </div>
-                <button>Cadastrar</button>
+                <button type="submit" class="btn btn-primary w-100">Cadastrar</button>
             </form>
-
         </div>
-
     </div>
 </body>
 

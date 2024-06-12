@@ -1,0 +1,46 @@
+Banco de dados: `thecrows`
+
+CREATE TABLE `Crow`(
+    `CrowId` INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `QrCode` VARCHAR(50) NOT NULL,
+    `Name` VARCHAR(150) NOT NULL,
+    `Tip` VARCHAR(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE `photograph` (
+    `PhotoId` INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `PhotoPath` VARCHAR(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE `UserType` (
+    `UserTypeId` INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `Description` VARCHAR(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE `User`(
+    `UserId` INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `Username` VARCHAR(250) NOT NULL,
+    `Email` VARCHAR(250) NOT NULL,
+    `Password` VARCHAR(100) NOT NULL,
+    `UserTypeId` INT(11) NOT NULL,
+    `PhotoId` INT(11) NOT NULL,
+    FOREIGN KEY (`UserTypeId`) REFERENCES `UserType`(`UserTypeId`),
+    FOREIGN KEY (`PhotoId`) REFERENCES `Photograph`(`PhotoId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE `Rank`(
+    `RankId` INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `Date` DATE NOT NULL,
+    `UserId` INT(11) NOT NULL,
+    `CrowId` INT(11) NOT NULL,
+    FOREIGN KEY (`UserId`) REFERENCES `User`(`UserId`),
+    FOREIGN KEY (`CrowId`) REFERENCES `Crow`(`CrowId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+
+INSERT INTO `UserType` (`Description`) VALUES ('Admin'), ('User');
+
+INSERT INTO `photograph`(`PhotoPath`)
+VALUES (
+    '\php\TheCrowsBD\assets\imagen\imagemPerfil.jpg'
+);

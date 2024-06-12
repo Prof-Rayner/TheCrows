@@ -9,7 +9,6 @@ function creatSnow(){
     setInterval(createSnowFlake, 250);
 }
 
-
 // Função para criar os flocos de neve
 function createSnowFlake() {
 	let flake = document.createElement('a');
