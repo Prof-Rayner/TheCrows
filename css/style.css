@@ -107,13 +107,13 @@ a{
 /* popup */
 
 
-/*.container-info{
-    position: fixed;
+/* .container-info{
+    position: absolute;
     z-index: 1;
-    left: 0;
-    top: 0;
-    width: 1000px;
-    height: 1000px;
+    left: 30;
+    top: 30;
+    width: 800px;
+    height: 800px;
     overflow: auto;
     background-color: blueviolet;
 }
@@ -124,8 +124,7 @@ a{
     padding: 20px;
     border-radius: 4px;
     width: 70%;
-}
-*/
+} */
 
 #blur.activate{
     filter: blur(20px);
@@ -211,4 +210,4 @@ hr{
         width: 10vh;
         height: 20vh;
     }
-} 
+}
