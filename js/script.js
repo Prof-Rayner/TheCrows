@@ -1,29 +1,20 @@
-function toggle() {
-    const blur = document.getElementById('blur');
-    blur.classList.toggle('activate')
-    const info = document.getElementById('info');
-    info.classList.toggle('activate')
+const popup = document.getElementById("container-info");
+const span = document.getElementsByClassName("close")[0];
+
+window.onclick = function (event) {
+    if (event.target == popup) {
+        popup.style.display = "none";
+    }
+}
+
+span.onclick = function () {
+    popup.style.display = "none";
 }
 
 
+function abrirPopup(){
 
+    popup.style.display = "block";
+    
+}    
 
-// var container = document.getElementById("container-info");
-// var abrirPopup = document.getElementById("abrir");
-// var fecharPopup = document.getElementById("sair");
-
-
-// abrirPopup.onclick = function(){
-//     container.style.display = "block";
-// }
-
-// fecharPopup.onclick = function () {
-//     container.style.display = "none";
-// }
-
-
-// window.onclick = function(event) {
-//     if (event.target == blur) {
-//       blur.style.opacity = 0;
-//     }
-//   }
