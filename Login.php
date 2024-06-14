@@ -1,12 +1,13 @@
-//<?php
-// session_start();
-// if ($user && password_verify($senha, $user['Password'])) {
-//     $_SESSION['usuario'] = $user['Email'];
-//     $_SESSION['start_time'] = time(); 
-//     header('location: index.php'); 
-//     exit;
-//}
-//?>
+<?php
+    include_once './api/login.php';
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if (isset($_POST['loginEmail']) && isset($_POST['loginPassword'])) {
+            login($_POST['loginEmail'], $_POST['loginPassword']);
+        }
+    }
+
+?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -32,14 +33,14 @@
         </div>
 
         <div class="form-section">
-            <!-- Form de Login -->
-            <form action="./api/login.php" id="loginForm" method="POST">
+            <!-- Form de Login --> 
+            <form id="loginForm" method="POST">
                 <div class="inputWithIcon">
-                    <input type="email" id="loginEmail" name="Email" class="form-control" placeholder="Digite seu E-mail" required>
+                    <input type="email" id="loginEmail" name="loginEmail" class="form-control" placeholder="Digite seu E-mail" required>
                     <i class="bi bi-envelope-fill"></i>
                 </div>
                 <div class="inputWithIcon">
-                    <input type="password" id="loginPassword" name="Senha" class="form-control" placeholder="Digite sua Senha" required>
+                    <input type="password" id="loginPassword" name="loginPassword" class="form-control" placeholder="Digite sua Senha" required>
                     <i class="bi bi-lock-fill"></i>
                 </div>
                 <div class="divCheck">
