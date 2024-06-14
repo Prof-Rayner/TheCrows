@@ -109,7 +109,6 @@ section.feed{
     background-color: #d3d3d3;
     box-shadow: 0 0 1rem rgba(0, 0, 0, .1);
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     border-radius: .5em;
@@ -152,54 +151,3 @@ section.feed{
 
 
 
-/* POPUP */
-
-
-/* 
-.popup {
-    display: none;
-    position: fixed;
-    backdrop-filter: grayscale(100%) blur(3px);
-    z-index: 1;
-    left: 0;
-    top: 0;
-    height: 100vh;
-    width: 100%;
-    overflow: auto;
-    background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.4);
-}
-    
-.info {
-    background-color: #fefefe;
-    margin: 5% auto;
-    padding: 0.2rem;
-    border-radius: 1rem;
-    max-width: 30rem;
-    height: 50rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.info img{
-    width: 100%;
-    height: 100%;
-}
-
-
-.foto{
-    width: 90%;
-    height: 60%;
-}
-
-.info p, .info h1{
-    font-size: 1.5rem;
-    flex-grow: 4;
-
-}
-
-.info p{
-    text-align: center;
-} */
