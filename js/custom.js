@@ -2,16 +2,16 @@ var usuarioLogado = localStorage.getItem('usuarioLogado');
  
 function exibirMensagem() {
     if(!usuarioLogado) {
-       
-        exibirImagem()
- 
         localStorage.setItem('usuarioLogado', true);
     }
 }
  
-function timer() {
- 
+function playsound(audioname, loop) {
+    let audio = new Audio(audioname);
+    audio.loop = loop;
+    audio.play();
 }
+ playsound("./audios/sample-1.ogg")
  
 function tocarAudio() {
     const audio = new Audio();
