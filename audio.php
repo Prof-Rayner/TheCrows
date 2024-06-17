@@ -12,7 +12,7 @@
     <h1>Home</h1>
     <img src="./img/2563963.jpg" alt="image">
     <audio autoplay id="audio">
-        <source src="./audios/sample-1.ogg" type="audio/ogg">
+        <source src="./audios/01. God of War.mp3" type="audio/mpeg">
  
     </audio>
 </body>

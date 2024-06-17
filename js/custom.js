@@ -11,7 +11,7 @@ function playsound(audioname, loop) {
     audio.loop = loop;
     audio.play();
 }
- playsound("./audios/sample-1.ogg")
+ playsound("./audios/01. God of War.mp3")
  
 function tocarAudio() {
     const audio = new Audio();
