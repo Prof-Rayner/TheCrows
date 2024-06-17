@@ -1,23 +1,27 @@
 Banco de dados: `thecrows`
-
-CREATE TABLE `Crow`(
+-- Tabela para armazenar informações sobre corvos
+CREATE TABLE `Crow` (
     `CrowId` INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `QrCode` VARCHAR(50) NOT NULL,
     `Name` VARCHAR(150) NOT NULL,
     `Tip` VARCHAR(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-CREATE TABLE `photograph` (
+-- Tabela para armazenar fotografias dos corvos
+CREATE TABLE `Photograph` (
     `PhotoId` INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    `PhotoPath` VARCHAR(255) NOT NULL
+    `Photo` MEDIUMBLOB NOT NULL,
+    `PhotoType` VARCHAR(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+-- Tabela para definir tipos de usuário
 CREATE TABLE `UserType` (
     `UserTypeId` INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `Description` VARCHAR(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-CREATE TABLE `User`(
+-- Tabela para armazenar informações dos usuários
+CREATE TABLE `User` (
     `UserId` INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `Username` VARCHAR(250) NOT NULL,
     `Email` VARCHAR(250) NOT NULL,
@@ -28,7 +32,8 @@ CREATE TABLE `User`(
     FOREIGN KEY (`PhotoId`) REFERENCES `Photograph`(`PhotoId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-CREATE TABLE `Rank`(
+-- Tabela para armazenar classificações dos usuários para corvos
+CREATE TABLE `Rank` (
     `RankId` INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `Date` DATE NOT NULL,
     `UserId` INT(11) NOT NULL,
@@ -38,9 +43,12 @@ CREATE TABLE `Rank`(
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
+
 INSERT INTO `UserType` (`Description`) VALUES ('Admin'), ('User');
 
-INSERT INTO `photograph`(`PhotoPath`)
+
+INSERT INTO Photograph (Photo, PhotoType)
 VALUES (
-    '\php\TheCrowsBD\assets\imagen\imagemPerfil.jpg'
+    LOAD_FILE('C:/xampp/htdocs/php/theCrowsV3/assets/imagens/img-perfil/imagemPerfil.jpg'),
+    'image/jpeg'
 );

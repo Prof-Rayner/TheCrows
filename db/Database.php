@@ -1,5 +1,4 @@
 <?php
-
 namespace db;
 
 use PDO;
@@ -12,21 +11,19 @@ class Database
     private $username = 'root';
     private $password = '';
     private $conn;
-
-
-    public function __construct($host = 'localhost', $dbname = 'thecrows', $username = 'root', $password = '')
-    {
-        $this->conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-        $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    }
-
-    public function getConnection()
-    {
-        return $this->conn;
-    }
-
-    public function closeConnection()
+    
+    public function connect()
     {
         $this->conn = null;
+
+        try {
+            $this->conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db_name, $this->username, $this->password);
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch (PDOException $e) {
+            throw new PDOException("Erro de conexão: " . $e->getMessage());
+        }
+
+        return $this->conn;
     }
 }
+?>
