@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -8,11 +8,11 @@
 </head>
 
 <body>
-    <div id="imagem"></div>
-    <h1>Home</h1>
-    <audio autoplay>
-        <source src="/audios/sample-1.ogg" type="audio/ogg">
-    </audio>
+    <div id="imagem">
+        <img src="/2806185_0.jpg" alt="GoW">
+    </div>
+    <h1>Home2</h1>
+    
 </body>
 
 </html>
