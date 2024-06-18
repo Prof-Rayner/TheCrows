@@ -8,11 +8,9 @@
 </head>
 
 <body>
-    <div id="imagem"></div>
     <h1>pagina inicial</h1>
-    <audio controls id="audio">
-        <source src="./audio/audio.mp3" type="audio/mpeg">
-
+    <audio autoplay id="audio">
+        <source src="./audio/01. God of War.mp3" type="audio/mpeg">
     </audio>
 </body>
 
