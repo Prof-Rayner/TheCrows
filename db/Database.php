@@ -1,4 +1,5 @@
 <?php
+
 namespace db;
 
 use PDO;
@@ -7,11 +8,11 @@ use PDOException;
 class Database
 {
     private $host = 'localhost';
-    private $db_name = 'thecrows';
+    private $db_name = 'thecrow';
     private $username = 'root';
     private $password = '';
     private $conn;
-    
+
     public function connect()
     {
         $this->conn = null;
@@ -26,4 +27,3 @@ class Database
         return $this->conn;
     }
 }
-?>

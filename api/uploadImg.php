@@ -7,8 +7,7 @@ $db = new Database();
 $conn = $db->connect();
 
 // Verifica se o formulário foi submetido
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["imagem"])) {
-    include_once __DIR__ . '/../db/Database.php';
+if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_FILES["imagem"])) {
 
     // Caminho para a pasta onde as imagens serão salvas
     $uploadDir = __DIR__ . '/../assets/imagens/img-perfil/';
@@ -27,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["imagem"])) {
         }
 
         // Verifica o tamanho do arquivo
-        $maxFileSize = 5 * 1024 * 1024;
+        $maxFileSize = 5 * 1024 * 1024; // 5 MB
         if ($uploadedFile['size'] > $maxFileSize) {
             throw new Exception("A imagem excede o tamanho máximo permitido de 5 MB.");
         }
@@ -42,21 +41,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["imagem"])) {
             throw new Exception("Falha ao mover o arquivo para o diretório de destino.");
         }
 
-        // Prepara e executa a consulta SQL para inserir no banco de dados
-        $sql = "INSERT INTO Photograph (Photo, PhotoType) VALUES (:photo, :photoType)";
+        // Prepara e executa a consulta SQL para inserir a imagem no banco de dados
+        $sql = "INSERT INTO Photograph (Photo, PhotoType) VALUES (:imageData, :imageType)";
         $stmt = $conn->prepare($sql);
-        $stmt->bindParam(':photo', $imageData, PDO::PARAM_LOB);
-        $stmt->bindParam(':photoType', $imageType, PDO::PARAM_STR);
+        $stmt->bindParam(':imageData', $imageData, PDO::PARAM_LOB);
+        $stmt->bindParam(':imageType', $imageType, PDO::PARAM_STR);
+        $stmt->execute();
 
-        if ($stmt->execute()) {
-            header('Location: ../uploadImg.php');
-            echo  "<script>alert(Imagem '" . htmlspecialchars($uploadedFile['name']) . "' inserida com sucesso!);</script>";
-        } else {
-            throw new Exception("Erro ao inserir a imagem no banco de dados.");
-        }
+        // Redireciona para a página de upload com uma mensagem de sucesso
+        header('Location: ../uploadImg.php');
+        exit;
+
     } catch (Exception $e) {
         echo "Erro: " . $e->getMessage();
     }
 } else {
-    echo  "<script>alert('Acesso inválido ao script de upload!);</script>";
+    echo "Por favor, selecione uma imagem para enviar.";
 }
+?>

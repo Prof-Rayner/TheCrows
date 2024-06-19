@@ -29,14 +29,14 @@ try {
     $db = new Database();
     $conn = $db->connect();
 
-    $sql = "SELECT * FROM user WHERE Email = :loginEmail";
+    $sql = "SELECT * FROM `User` WHERE `Email` = :loginEmail";
     $stmt = $conn->prepare($sql);
     $stmt->execute([':loginEmail' => $loginEmail]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if ($user) {
         if (password_verify($loginPassword, $user['Password'])) {
-            $_SESSION['userID'] = $user['UserId']; 
+            $_SESSION['userId'] = $user['UserId'];
             $_SESSION['userEmail'] = $user['Email'];
 
             $_SESSION['success'] = 'Login bem-sucedido.';
@@ -48,7 +48,7 @@ try {
             exit;
         }
     } else {
-        $_SESSION['error'] = 'Nome de usuário ou senha incorretos.';
+        $_SESSION['error'] = 'E-mail não encontrado.';
         header('Location: ../login.php');
         exit;
     }
@@ -57,4 +57,3 @@ try {
     header('Location: ../login.php');
     exit;
 }
-?>
