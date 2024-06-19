@@ -12,12 +12,11 @@
     justify-content: center;
     align-items: center;
     background-image: linear-gradient(rgb(207, 243, 248), rgb(207, 243, 248));
-    /* background-image: linear-gradient(#ccc, #ccc); */
-    /* background-color: #ccc; */
     width: 100vw;
     height: 100vh;
     background-color: #FFF;
     flex-direction: column;
+    position: fixed;
 }
 
 .bloco_principal {
@@ -51,6 +50,9 @@ span {
     border-radius: .6rem;
     width: 100%;
     height: 100%;
+    animation-name: corvo_aparecendo;
+    animation-duration: 2;
+    animation-timing-function: ease;
 }
 
 h1 {
@@ -74,4 +76,15 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+@keyframes corvo_aparecendo {
+      
+    0% {
+        display: none;
+    }
+
+    100% {
+        display: block;
+    }
 }
