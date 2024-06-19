@@ -1,12 +1,25 @@
 var usuarioLogado = localStorage.getItem('usuarioLogado');
 
 function iniciar() {
-    if(!usuarioLogado) {
-        
-        exibirImagem();
+        if (!usuarioLogado) {
 
-        localStorage.setItem('usuarioLogado', true);
+            
+        
+            exibirImagem();
+            playsound();
+    
+            localStorage.setItem('usuarioLogado', true);
+        }
     }
+    
+function playsound() {
+    window.addEventListener('load', () => {
+        audio = document.getElementById("audio")
+        audio.setAttribute("autoplay", '""')
+        setInterval(() => {
+            audio.play()
+        }, 100);
+    });
 }
 
 function exibirImagem() {
@@ -21,19 +34,5 @@ function exibirImagem() {
     img.dispatchEvent(new Event('load'));
 }
 
-// function timer() {
-
-// }
-
-function tocarAudio(audioname, loop) {
-    let audio = new Audio(audioname);
-    audio.loop = loop;
-    audio.play();
-}
-tocarAudio("./audio/01. God of War.mp3")
-
-function getAudioTime() {
-
-}
 
 iniciar();
