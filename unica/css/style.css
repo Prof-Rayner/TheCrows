@@ -1,0 +1,17 @@
+audio {
+    display: none;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    /* background-color: black; */
+}
+
+img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}

@@ -2,14 +2,19 @@ let usuarioLogado = localStorage.getItem('usuarioLogado');
 
 function iniciar() {
   if (!usuarioLogado) {
-    document.getElementById("conteudo").style.opacity = "0";
+    document.getElementById("conteudo").style.display = "none";
     exibirVideo();
     playAudio();
-
     localStorage.setItem('usuarioLogado', true);
     verificar();
   }
 };
+
+function direcionar() {
+  if(!tempoAudio()) {
+    // continua
+  }
+}
 
 function verificar() {
   if(usuarioLogado) {
@@ -18,9 +23,15 @@ function verificar() {
 }
 
 function carregarConteudo() {
-  document.getElementById("conteudo").style.opacity = "1";
+  document.getElementById("conteudo").style.display = "inline";
 }
 
+
+
+function tempoAudio() {
+  let x = document.getElementById("audio").duration;
+  console.log(x);
+}
 
 function playAudio() {
   window.addEventListener('load', () => {
@@ -29,6 +40,7 @@ function playAudio() {
     setInterval(() => {
       audio.play()
     }, 100);
+    tempoAudio();
   });
 };
 
