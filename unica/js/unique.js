@@ -1,37 +1,37 @@
-var usuarioLogado = localStorage.getItem('usuarioLogado');
+let usuarioLogado = localStorage.getItem('usuarioLogado');
 
 function iniciar() {
-        if (!usuarioLogado) {
+  if (!usuarioLogado) {
 
-            
-        
-            exibirImagem();
-            playsound();
-    
-            localStorage.setItem('usuarioLogado', true);
-        }
-    }
-    
-function playsound() {
-    window.addEventListener('load', () => {
-        audio = document.getElementById("audio")
-        audio.setAttribute("autoplay", '""')
-        setInterval(() => {
-            audio.play()
-        }, 100);
-    });
-}
 
-function exibirImagem() {
-    var img = new Image();
 
-    img.src = './img/gow.jpg';
+    exibirVideo();
+    playAudio();
 
-    img.addEventListener('load', function() {
-        document.body.appendChild(img);
-    });
+    localStorage.setItem('usuarioLogado', true);
+  }
+};
 
-    img.dispatchEvent(new Event('load'));
+function playAudio() {
+  window.addEventListener('load', () => {
+    audio = document.getElementById("audio")
+    audio.setAttribute("autoplay", '""')
+    setInterval(() => {
+      audio.play()
+    }, 100);
+  });
+};
+
+function exibirVideo() {
+  var gif = new Image();
+
+  gif.src = 'midia/intro.gif';
+
+  gif.addEventListener('load', function () {
+    document.body.appendChild(gif);
+  });
+
+  gif.dispatchEvent(new Event('load'));
 }
 
 
