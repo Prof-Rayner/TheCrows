@@ -1,0 +1,17 @@
+Exigencias para a task
+
+Visão geral:
+    Um script que faça com que quando a tela for carregada, executar duas tarefas: exibir uma imagem, e reproduzir um audio. Essa ação será feita apenas uma vez, e quando o audio acabar, ela será direcionada para a tela de login
+
+Concluidos:
+    Função que executa apenas uma vez ao iniciar a página
+    Exibir uma imagem (que depois vai ser substituido por um gif)
+
+Não concluidos:
+    Tocar um som ao iniciar
+        Não é possivel da maneira convencional por causa do bloqueio do navegador (https://developer.chrome.com/blog/autoplay?hl=pt-br)
+    Redirecionamento
+        Função que depende do tamanho do audio para funcionar.
+    Pegar o tamando do audio em segundos
+        Se estiver fora da condição, redirecionar para a pagina de login (Redirecionamento);
+        Ou se for feito no login, usar a manipulação de DOM para mostrar ou ocultar os elementos.
