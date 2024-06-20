@@ -2,15 +2,25 @@ let usuarioLogado = localStorage.getItem('usuarioLogado');
 
 function iniciar() {
   if (!usuarioLogado) {
-
-
-
+    document.getElementById("conteudo").style.opacity = "0";
     exibirVideo();
     playAudio();
 
     localStorage.setItem('usuarioLogado', true);
+    verificar();
   }
 };
+
+function verificar() {
+  if(usuarioLogado) {
+    carregarConteudo();
+  }
+}
+
+function carregarConteudo() {
+  document.getElementById("conteudo").style.opacity = "1";
+}
+
 
 function playAudio() {
   window.addEventListener('load', () => {
@@ -33,6 +43,5 @@ function exibirVideo() {
 
   gif.dispatchEvent(new Event('load'));
 }
-
 
 iniciar();
