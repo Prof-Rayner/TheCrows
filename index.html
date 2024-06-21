@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
-    <script src="js/unique.js"></script>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/unique.js" defer></script>
+</head>
 <body>
-
-    <audio controls=""  name="media" id="audio">
+    <div id="conteudo">
+        <button onclick="iniciar()">Start</button>
+    </div>
+    <audio id="audio" controls>
         <source src="audio/intro.ogg" type="audio/ogg">
     </audio>
-    <div id="fundo">
-
+    <div id="gifContainer">
+        <img id="gif" src="midia/intro.gif" alt="intro" style="display: none;">
     </div>
-
 </body>
-
 </html>
-

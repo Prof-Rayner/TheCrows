@@ -2,37 +2,36 @@ let usuarioLogado = localStorage.getItem('usuarioLogado');
 
 function iniciar() {
   if (!usuarioLogado) {
-
-
-
-    exibirVideo();
-    playAudio();
-
+    exibirTelaInicial();
     localStorage.setItem('usuarioLogado', true);
+  } else {
+    redirecionarParaLogin();
   }
-};
-
-function playAudio() {
-  window.addEventListener('load', () => {
-    audio = document.getElementById("audio")
-    audio.setAttribute("autoplay", '""')
-    setInterval(() => {
-      audio.play()
-    }, 100);
-  });
-};
-
-function exibirVideo() {
-  var gif = new Image();
-
-  gif.src = 'midia/intro.gif';
-
-  gif.addEventListener('load', function () {
-    document.body.appendChild(gif);
-  });
-
-  gif.dispatchEvent(new Event('load'));
 }
 
+function exibirTelaInicial() {
+  document.getElementById("conteudo").style.display = "none";
+  document.getElementById("gif").style.display = "block";
 
-iniciar();
+  let audio = document.getElementById("audio");
+  audio.play();
+
+  setTimeout(function () {
+    audio.pause();
+    audio.currentTime = 0;
+    document.getElementById("gif").style.display = "none";
+    redirecionarParaLogin(); 
+  }, 14000);
+}
+
+function iniciar() {
+  document.getElementById("conteudo").style.display = "none";
+  document.getElementById("gif").style.display = "block";
+
+  let audio = document.getElementById("audio");
+  audio.play();
+  audio.addEventListener('ended', function() {
+      window.location.href = 'login.html'; 
+  });
+}
+
