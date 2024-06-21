@@ -8,11 +8,10 @@ Concluidos:
     Exibir uma imagem (que depois vai ser substituido por um gif)
 
 Não concluidos:
-    Tocar um som com click
+    Tocar um som ao iniciar
         Não é possivel da maneira convencional por causa do bloqueio do navegador (https://developer.chrome.com/blog/autoplay?hl=pt-br)
-    
+    Redirecionamento
+        Função que depende do tamanho do audio para funcionar.
     Pegar o tamando do audio em segundos
         Se estiver fora da condição, redirecionar para a pagina de login (Redirecionamento);
         Ou se for feito no login, usar a manipulação de DOM para mostrar ou ocultar os elementos.
-    Botão na tela principal, quando tocado, ele vai sumir e dar inicio a dois eventos: tocar audio, e rodar video
-    Quando acabar o som.. fazer a ação de ir pro login
