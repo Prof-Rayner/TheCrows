@@ -152,8 +152,19 @@ function draw() {
 }
 
 window.onload = function() {
-    initDrawingCanvas();
+    
+    
+}    
+
+setTimeout(() => {
+    parabens(); 
+}, 850);
+
+function parabens() {
+    
     requestAnimationFrame(loop);
+    initDrawingCanvas();
+
 };
 
 function loop() {
@@ -184,15 +195,6 @@ function checkParticlesComplete() {
     return true;
 }
 
-// math and stuff
-
-/**
- * easing equations from http://gizma.com/easing/
- * t = current time
- * b = start value
- * c = delta value
- * d = duration
- */
 var Ease = {
     inCubic:function (t, b, c, d) {
         t /= d;

@@ -51,7 +51,7 @@ span {
     border-radius: .6rem;
     width: 100%;
     height: 100%;
-    animation: corvo_aparecendo 3s infinite;
+    animation: corvo_aparecendo 1s forwards 1;
 }
 
 h1 {
@@ -79,12 +79,15 @@ p {
 }
 
 @keyframes corvo_aparecendo {
-      
-    0% {
-        opacity: 0;
+      0%{
+
+          opacity: 1;
+      }
+    80% {
+        opacity: 1;
     }
 
     100% {
-        opacity: 1;
+        opacity: 0;
     }
 }
