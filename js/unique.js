@@ -34,5 +34,8 @@ function exibirTelaInicial(duration) {
 function redirecionarParaLogin() {
   window.location.href = 'login.html';
 }
-document.querySelector("#conteudo button").addEventListener("click", exibirTela);
+const startButton = document.querySelector("#conteudo button");
+if (startButton) {
+  startButton.addEventListener("click", exibirTela);
+}
 window.onload = iniciar;
