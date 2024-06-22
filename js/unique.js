@@ -2,36 +2,37 @@ let usuarioLogado = localStorage.getItem('usuarioLogado');
 
 function iniciar() {
   if (!usuarioLogado) {
-    exibirTelaInicial();
+    exibirTelaInicial(14400); 
     localStorage.setItem('usuarioLogado', true);
-  } else {
-    redirecionarParaLogin();
   }
 }
 
-function exibirTelaInicial() {
-  document.getElementById("conteudo").style.display = "none";
-  document.getElementById("gif").style.display = "block";
+function exibirTela() {
+  exibirTelaInicial(14400);
+}
 
-  let audio = document.getElementById("audio");
+function exibirTelaInicial(duration) {
+  const conteudo = document.getElementById("conteudo");
+  const gif = document.getElementById("gif");
+  const audio = document.getElementById("audio");
+
+  conteudo.style.display = "none";
+  gif.style.display = "block";
+
   audio.play();
 
-  setTimeout(function () {
+  audio.currentTime = 0;
+  audio.play();
+  setTimeout(() => {
     audio.pause();
     audio.currentTime = 0;
-    document.getElementById("gif").style.display = "none";
-    redirecionarParaLogin(); 
-  }, 14000);
+    gif.style.display = "none";
+    redirecionarParaLogin();
+  }, duration);
 }
 
-function iniciar() {
-  document.getElementById("conteudo").style.display = "none";
-  document.getElementById("gif").style.display = "block";
-
-  let audio = document.getElementById("audio");
-  audio.play();
-  audio.addEventListener('ended', function() {
-      window.location.href = 'login.html'; 
-  });
+function redirecionarParaLogin() {
+  window.location.href = 'login.html';
 }
-
+document.querySelector("#conteudo button").addEventListener("click", exibirTela);
+window.onload = iniciar;
