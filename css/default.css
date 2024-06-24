@@ -6,31 +6,32 @@
     --white: #fff;
 }
 
-
 html {
     font-size: 62.5%;
 }
 
 
 * {
-    /* margin: 0; */
-    /* padding: 0; */
+    margin: 0;
+    padding: 0; 
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
-    overflow: hidden;
+    
+    user-select: none;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
 }
 
-body {
+.backgroundImage{
+    position: fixed;
+    top: 0;
     height: 100vh;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* flex-direction: column; */
+    width: 100vw;
     background-image: url(../assets/imagens/loginBackground.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center top;
-    backdrop-filter: blur(3px);
+    filter: blur(3px);
+    z-index: -999;
 }
