@@ -1,0 +1,19 @@
+# Ativa o módulo que faz a reescrita de URL
+RewriteEngine on
+ 
+# Remover extensão do arquivo | exemplo: arquivo.php -> arquivo
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s([^.]+)\.php[NC]
+RewriteRule ^ %1 [R,NC]
+ 
+# Redirecionar a página sem extensão para o arquivo correspondente
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*?)/?$ $1.php [L]
+ 
+# Se o arquivo solicitado não existir - vai para a página 404.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ 404.php?url=$1 [L]
+ 
+# Não deixar exibir uma pasta do diretorio
+Options -Indexes
