@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     async function fetchPerfilData() {
         try {
-            const response = await fetch("./api/getPerfil.php");
+            const response = await fetch("./api/getPerfil");
             if (!response.ok) {
                 throw new Error('Erro ao carregar as informações do perfil.');
             }
@@ -21,25 +21,30 @@ document.addEventListener("DOMContentLoaded", function () {
         updateElementText("corvosColetados", data.numCorvosColetados);
         updateElementText("corvosTotais", data.numCorvosTotais);
         updateElementText("rank", data.rank);
+        removeRanking(data.usertype);
+        popularHOME(data.listaDeCorvos);
         window.ListaCorvos = data.listaDeCorvos;
-        popularHOME(window.ListaCorvos);
     }
 
 
-    async function fetchProfileImage() {
-        try {
-            const response = await fetch("./api/getImg.php");
-            if (!response.ok) {
-                throw new Error('Erro ao carregar a imagem de perfil.');
-            }
-            const blob = await response.blob();
-            const url = URL.createObjectURL(blob);
-            updateElementAttribute("profileImage", "src", url);
-        } catch (error) {
-            handleFetchError(error);
-        }
-    }
+    // async function fetchProfileImage() {
+    //     try {
+    //         const response = await fetch("./api/getImg.php");
+    //         if (!response.ok) {
+    //             throw new Error('Erro ao carregar a imagem de perfil.');
+    //         }
+    //         const blob = await response.blob();
+    //         const url = URL.createObjectURL(blob);
+    //         updateElementAttribute("profileImage", "src", url);
+    //     } catch (error) {
+    //         handleFetchError(error);
+    //     }
+    // }
 
+    function removeRanking(usertype){
+        const btnRanking = document.getElementById("btnRanking");
+        btnRanking.remove();
+    }
 
     // JEFF
     function popularHOME(array){

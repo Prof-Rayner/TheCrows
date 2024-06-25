@@ -6,13 +6,13 @@ use db\Database;
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     $_SESSION['error'] = 'Método inválido.';
-    header('Location: ../login.php');
+    header('Location: ../login');
     exit;
 }
 
 if (!isset($_POST['loginEmail']) || !isset($_POST['loginPassword'])) {
     $_SESSION['error'] = 'Dados incompletos.';
-    header('Location: ../login.php');
+    header('Location: ../login');
     exit;
 }
 
@@ -21,7 +21,7 @@ $loginPassword = trim($_POST['loginPassword']);
 
 if (!filter_var($loginEmail, FILTER_VALIDATE_EMAIL)) {
     $_SESSION['error'] = 'Formato de e-mail inválido.';
-    header('Location: ../login.php');
+    header('Location: ../login');
     exit;
 }
 
@@ -42,22 +42,22 @@ try {
             );
 
             $_SESSION['success'] = 'Login bem-sucedido';
-            $url = isset($_SESSION['redirecionar'])? $_SESSION['redirecionar'] : '../index.php';
+            $url = isset($_SESSION['redirecionar'])? $_SESSION['redirecionar'] : '../index';
             unset($_SESSION['redirecionar']);
             header("Location: $url");
             exit;
         } else {
             $_SESSION['error'] = 'Senha incorreta';
-            header('Location: ../login.php');
+            header('Location: ../login');
             exit;
         }
     } else {
         $_SESSION['error'] = 'E-mail não cadastrado';
-        header('Location: ../login.php');
+        header('Location: ../login');
         exit;
     }
 } catch (PDOException $e) {
     $_SESSION['error'] = 'Erro no servidor: ' . $e->getMessage();
-    header('Location: ../login.php');
+    header('Location: ../login');
     exit;
 }

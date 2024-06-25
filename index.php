@@ -52,8 +52,8 @@
                     </div>
                     
                     <div class="profile-buttons">
-                        <a href="admin.php"><button>RANKING</button></a>
-                        <a href="logout.php"><button>SAIR</button></a>
+                        <a id='btnRanking' href='admin'><button>RANKING</button></a>
+                        <a href="logout"><button>SAIR</button></a>
                     </div>
                 </div>
             </div>

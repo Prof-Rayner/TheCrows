@@ -17,7 +17,7 @@ function validarSessao(){
     //se nao estiver logado
     if( !isset($_SESSION['login']) ){
         $_SESSION['redirecionar'] = $_SERVER['REQUEST_URI'];
-        header('location: ./login.php');
+        header('location: ./login');
         exit;
     }
 }
@@ -26,8 +26,8 @@ function validarSessao(){
 function validarLoginAdm(){
     validarSessao();
     // se não for um ADM
-    if ($_SESSION['usuario']['id'] != 1){
-        header('location: ./index.php');
+    if ($_SESSION['usuario']['id_usertype'] != 1){
+        header('location: ./index');
         exit;
     }
 }

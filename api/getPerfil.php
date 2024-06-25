@@ -23,7 +23,7 @@ try {
     // Função para obter informações do perfil
     function getUserInfo($userId, $conn)
     {
-        $sql = "SELECT name FROM user WHERE id = :userId";
+        $sql = "SELECT name, id_usertype, id_photo FROM user WHERE id = :userId";
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':userId', $userId, PDO::PARAM_INT);
         $stmt->execute();
@@ -31,13 +31,13 @@ try {
     }
 
     // Função para obter informações do perfil
-    function getUserPhoto($userId, $conn){
-        $sql = "SELECT id_photo FROM user WHERE id = :userId";
-        $stmt = $conn->prepare($sql);
-        $stmt->bindParam(':userId', $userId, PDO::PARAM_INT);
-        $stmt->execute();
-        return $stmt->fetch(PDO::FETCH_ASSOC);
-    }
+    // function getUserPhoto($userId, $conn){
+    //     $sql = "SELECT id_photo FROM user WHERE id = :userId";
+    //     $stmt = $conn->prepare($sql);
+    //     $stmt->bindParam(':userId', $userId, PDO::PARAM_INT);
+    //     $stmt->execute();
+    //     return $stmt->fetch(PDO::FETCH_ASSOC);
+    // }
 
     // <JEFF
     // FUNCAO PARA PEGAR TODOS OS CORVOS REGISTRADO E OS CAPTURADOS EM UMA ARRAY
@@ -112,23 +112,25 @@ try {
         echo json_encode(array("error" => "Usuário não encontrado"));
         exit;
     }
+    $_SESSION['usuario']["id_usertype"] = $userInfo['id_usertype'];
 
     // Obter número de corvos coletados
     $numCorvosColetados = getNumCorvosColetados($userId, $conn);
-    
-    $foto = getUserPhoto($userId, $conn)['id_photo'];
-    
+
     // Obter número total de corvos
     $numCorvosTotais = getNumCorvosTotais($conn);
+
     // Obter classificação do usuário
     $rank = getUserRank($userId, $conn);
+
     // JEFF
     $listaDeCorvos = getCrowsResultByUser($userId, $conn);
 
     // Montar resposta JSON
     $response = [
         'username' => $userInfo['name'],
-        'foto' => $foto,
+        'foto' => $userInfo['id_photo'],
+        'usertype' => $userInfo['id_usertype'],
         'numCorvosColetados' => $numCorvosColetados,
         'numCorvosTotais' => $numCorvosTotais,
         'rank' => $rank,

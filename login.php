@@ -21,7 +21,9 @@
 
     <!-- LOGIN -->
     <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./css/intro.css">
     <script defer src="./js/login.js"></script>
+
     
     <!-- Snow Flake -->
     <link rel="stylesheet" href="./css/snowFlake.css">
@@ -30,6 +32,14 @@
 
 <body>
     <div class="backgroundImage"></div>
+
+    <div id='intro'>
+        <div>
+            <h1>Toque para iniciar</h1>
+        </div>
+
+    </div>
+
     
     <div class="container">
         <div class="btn">
@@ -41,7 +51,7 @@
         <div class="form-section">
 
             <!-- Form de Login -->
-            <form action="./api/loginAccess.php" id="loginForm" method="POST">
+            <form action="./api/loginAccess" id="loginForm" method="POST">
                 <div class="inputWithIcon">
                     <input type="email" id="loginEmail" name="loginEmail" placeholder="Digite seu E-mail" required>
                     <i class="bi bi-envelope-fill"></i>
@@ -62,7 +72,7 @@
                 
 
             <!-- Form de Cadastro -->
-            <form action="./api/register.php" id="registerForm" method="POST">
+            <form action="./api/register" id="registerForm" method="POST">
                 <div class="inputWithIcon">
                     <input type="text" id="signName" name="Nome" class="form-control" placeholder="Digite seu Nome" required>
                     <i class="bi bi-person-fill"></i>

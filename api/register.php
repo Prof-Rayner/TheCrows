@@ -16,12 +16,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Verificação básica se os campos não estão vazios
     if (empty($nome) || empty($email) || empty($senha)) {
         $_SESSION['error'] = 'Todos os campos são obrigatórios.';
-        header('Location: ../login.php');
+        header('Location: ../login');
         exit;
 
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $_SESSION['error'] = 'Formato de e-mail inválido.';
-        header('Location: ../login.php');
+        header('Location: ../login');
         exit;
 
     } else {
@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             if ($query->rowCount() > 0) {
                 $_SESSION['error'] = 'Email já está cadastrado!';
-                header('Location: ../login.php');
+                header('Location: ../login');
                 exit;
 
             } else {
@@ -56,24 +56,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         'ID' => $conn->lastInsertId(),
                     );
                     $_SESSION['success'] = 'Cadastrado com sucesso!';
-                    header('Location: ../index.php');
+                    header('Location: ../index');
                     exit;
 
                 } else {
                     $_SESSION['error'] = 'Erro no cadastro!';
-                    header('Location: ../login.php');
+                    header('Location: ../login');
                     exit;
                 }
             }
         } catch (PDOException $e) {
             $_SESSION['error'] = 'Erro ao executar a consulta: ' . $e->getMessage();
-            header('Location: ../login.php');
+            header('Location: ../login');
             exit;
         }
     }
 } else {
     $_SESSION['error'] = 'Método inválido.';
-    header('Location: ../login.php');
+    header('Location: ../login');
     exit;
 }
 ?>

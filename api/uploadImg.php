@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_FILES["imagem"])) {
         $stmt->execute();
 
         // Redireciona para a página de upload com uma mensagem de sucesso
-        header('Location: ../uploadImg.php');
+        header('Location: ../uploadImg');
         exit;
 
     } catch (Exception $e) {
