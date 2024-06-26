@@ -1,4 +1,19 @@
 let usuarioLogado = localStorage.getItem('usuarioLogado');
+const signup = document.querySelector(".signup");
+const login = document.querySelector(".login");
+const slider = document.querySelector(".slider");
+const formSection = document.querySelector(".form-section");
+
+signup.addEventListener("click", () => {
+	slider.classList.add("moveslider");
+	formSection.classList.add("form-section-move");
+});
+
+login.addEventListener("click", () => {
+	slider.classList.remove("moveslider");
+	formSection.classList.remove("form-section-move");
+});
+
 
 function iniciar() {
   if (!usuarioLogado) {
@@ -27,13 +42,10 @@ function exibirTelaInicial(duration) {
     audio.pause();
     audio.currentTime = 0;
     gif.style.display = "none";
-    redirecionarParaLogin();
   }, duration);
 }
 
-function redirecionarParaLogin() {
-  window.location.href = 'login.html';
-}
+
 const startButton = document.querySelector("#conteudo button");
 if (startButton) {
   startButton.addEventListener("click", exibirTela);
