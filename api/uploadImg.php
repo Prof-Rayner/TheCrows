@@ -10,7 +10,7 @@ $conn = $db->connect();
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_FILES["imagem"])) {
 
     // Caminho para a pasta onde as imagens serão salvas
-    $uploadDir = __DIR__ . '/../assets/imagens/img-perfil/';
+    $uploadDir = __DIR__ . '/../assets/imagens/perfil/';
 
     try {
         // Verifica se o diretório de upload existe
@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_FILES["imagem"])) {
         $stmt->execute();
 
         // Redireciona para a página de upload com uma mensagem de sucesso
-        header('Location: ../uploadImg.php');
+        header('Location: ../uploadImg');
         exit;
 
     } catch (Exception $e) {

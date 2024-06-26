@@ -1,17 +1,20 @@
 .snow {
     position: fixed;
-    width: 100%;
-    height: 100%;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
     z-index: -2;
 }
+
 
 .flake {
     position: absolute;
     font-size: 3rem;
     color: #fff;
-    animation: fall linear forwards;
+    animation: fall linear infinite;
     filter: blur(1rem);
 }
+
 
 @keyframes fall {
     from {

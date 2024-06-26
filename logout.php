@@ -1,6 +1,7 @@
 <?php
     include_once './api/sessao.php';
-    validarLoginAdm();
+    logout();
+    header("Refresh: 1; URL=index");
 ?>
 
 <!DOCTYPE html>
@@ -12,9 +13,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./css/default.css">
-    <title>ADMIN</title>
+    <title>Logout</title>
     
-    <!-- ADMIN -->
+    <!-- Logout -->
+    <link rel="stylesheet" href="./css/logout.css">
     
     <!-- Snow Flake -->
     <link rel="stylesheet" href="./css/snowFlake.css">
@@ -23,8 +25,10 @@
 
 <body>
     <div class="backgroundImage"></div>
-
-    fazer painel de controle
+    
+    <div id="container" class="container">
+        <h1>ADEUS GAROTO!</h1>
+    </div>
+    
 </body>
-
 </html>

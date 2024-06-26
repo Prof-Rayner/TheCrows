@@ -1,7 +1,3 @@
-<?php
-    include_once './api/sessao.php';
-    validarLoginAdm();
-?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -12,9 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./css/default.css">
-    <title>ADMIN</title>
+    <title>Logout</title>
     
-    <!-- ADMIN -->
+    <!-- 404 -->
+    <link rel="stylesheet" href="./css/404.css">
     
     <!-- Snow Flake -->
     <link rel="stylesheet" href="./css/snowFlake.css">
@@ -23,8 +20,11 @@
 
 <body>
     <div class="backgroundImage"></div>
-
-    fazer painel de controle
+    
+    <div id="container" class="container">
+        <h1>Pagina não Encontada</h1>
+        <a href="index"><button><h1>VOLTAR</h1></button></a>
+    </div>
+    
 </body>
-
 </html>

@@ -1,103 +1,95 @@
+<?php
+    include_once './api/sessao.php';
+    validarSessao();
+?>
+
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <title>Home Corvo</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
-    <link rel="stylesheet" href="./css/css-home/style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./css/default.css">
+    <title>Home</title>
+    
+    <!-- INDEX -->
+    <link rel="stylesheet" href="./css/home.css">
+    <script defer src="./js/popup.js"></script>
+    <script defer src="./js/perfil.js"></script>
+    
+    <!-- Snow Flake -->
+    <link rel="stylesheet" href="./css/snowFlake.css">
+    <script defer src="./js/snowFlake.js"></script>
 </head>
 
 <body>
-    <div class="imagem-fundo"></div>
-    <div class="limitar">
-        <section class="perfil-descricao">
-            <div class="alinhando">
-                <div class="imagemPerfil">
-                    <img id="profileImage" src="./assets/imagens/img-perfil/default.jpg" alt="Sua imagem de perfil" class="img-perfil">
+    <div class="backgroundImage"></div>
+    
+    <main class="container">
+    
+        <div class="profile"> <!-- Perfil -->
+            <div>
+                <div class="picture"> <!-- Foto de perfil -->
+                    <img id="profileImage" src="./assets/imagens/perfil/perfil0.jpg">
                 </div>
-                <div class="infos">
-                    <div class="lista">
-                        <ul class="descricao-perfil">
-                            <li>
-                                <div class="infos-coletados">
-                                    <!-- Número de corvos coletados -->
-                                    <span>coletados</span><span id="corvosColetados">-</span>
-                                    <span>Total</span><span id="corvosTotais">-</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="infos-coletados">
-                                    <!-- Rank do usuário -->
-                                    <span id="rank">-</span>
-                                    <span>rank</span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="nome">
-                        <!-- Nome de usuário -->
-                        <p><span id="username">-</span></p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="feed">
-            <div style="max-width: 100%;">
-                <div class="line-feed">
-                    <div aba="publicacoes" class="single-line-name">
-                        <div style="display: block;" class="line-marcacao"></div>
-                        <p style="font-weight: bold;">Corvos</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="cards">
-            <div class="center">
-                <div class="card">
-                    <img src="./assets/imagens/img-Home/CorvoGrid.jpg" alt="Imagem de um corvo" class="publicacao-single">
-                </div>
-                <div class="card">
-                    <img src="./assets/imagens/img-Home/CorvoGrid.jpg" alt="Imagem de um corvo" class="publicacao-single">
-                </div>
-                <div class="card">
-                    <img src="./assets/imagens/img-Home/CorvoGrid.jpg" alt="Imagem de um corvo" class="publicacao-single">
-                </div>
-                <div class="card">
-                    <img src="./assets/imagens/img-Home/CorvoGrid.jpg" alt="Imagem de um corvo" class="publicacao-single">
-                </div>
-                <div class="card">
-                    <img src="./assets/imagens/img-Home/CorvoGrid.jpg" alt="Imagem de um corvo" class="publicacao-single">
-                </div>
-                <div class="card">
-                    <img src="./assets/imagens/img-Home/CorvoGrid.jpg" alt="Imagem de um corvo" class="publicacao-single">
-                </div>
-                <div class="card">
-                    <img src="./assets/imagens/img-Home/CorvoGrid.jpg" alt="Imagem de um corvo" class="publicacao-single">
-                </div>
-                <div class="card">
-                    <img src="./assets/imagens/img-Home/CorvoGrid.jpg" alt="Imagem de um corvo" class="publicacao-single">
-                </div>
-                <div class="card">
-                    <img src="./assets/imagens/img-Home/CorvoGrid.jpg" alt="Imagem de um corvo" class="publicacao-single">
-                </div>
-                <div class="card">
-                    <img src="./assets/imagens/img-Home/CorvoGrid.jpg" alt="Imagem de um corvo" class="publicacao-single">
-                </div>
-                <div class="card">
-                    <img src="./assets/imagens/img-Home/CorvoGrid.jpg" alt="Imagem de um corvo" class="publicacao-single">
-                </div>
-                <div class="card">
-                    <img src="./assets/imagens/img-Home/CorvoGrid.jpg" alt="Imagem de um corvo" class="publicacao-single">
-                </div>
-            </div>
-        </section>
-    </div>
-    <script src="./js/profileScript.js" defer></script>
-</body>
 
+                <div class="profile-user"><!-- Elementos de captura dos corvos | Botões de Pagina Admin e Logout -->
+                    <div class="scoreBoard"> 
+                        <div>
+                            <h1> <span id="corvosColetados">0</span></h1>
+                            <span>COLETADOS</span>
+                        </div>
+                        <div>
+                            <h1> <span id="corvosTotais">12</span></h1>
+                            <span>TOTAL</span>
+                        </div>
+                        <div>
+                            <h1> <span id="rank">?</span></h1>
+                            <span>RANK</span>
+                        </div>
+                    </div>
+                    
+                    <div class="profile-buttons">
+                        <a id='btnRanking' href='admin'><button>RANKING</button></a>
+                        <a href="logout"><button>SAIR</button></a>
+                    </div>
+                </div>
+            </div>
+
+            <div> <!-- Nome do Usuário -->
+                <h1 id="username">Nome</h1>
+            </div>
+        </div>
+
+        <div class="feed">
+            <div class="feedItem">
+                <div class="feedLine"></div>
+                <h2>Corvos</h2>
+            </div>
+        </div>
+
+        <div id="gallery" class="gallery">
+        </div>
+
+    </main>
+
+    <div id='modalDica' class='modal oculto'>
+        <div class='conteudo'>
+            <h1 id='nomeTitulo'>Nome do Corvo</h1>
+            <div class='gallery-item'>
+                <img src="./assets/imagens/corvo1.jpg" alt="item-Corvo">
+                <h1 id='cadeado' class='info oculto bi bi-lock-fill'></h1>
+            </div>
+            <div>
+                <h1>DICA</h1>
+                <h3 id='descricao'> Aqui vai ficar o texto com a dica
+                    ou uma charada de onde pode estar esse corvo
+                </h3>
+            </div>
+        </div>
+    </div>
+
+</body>
 </html>

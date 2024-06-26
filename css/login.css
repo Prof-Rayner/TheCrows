@@ -1,19 +1,24 @@
-@import "default.css";
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
 
 .container {
     max-width: 35rem;
-    min-width: 35rem;
     padding: 1rem;
     border-radius: 1rem;
-    margin: 50% auto;
     box-shadow: var(--white) 0 0 1rem;
     background-color: rgba(255, 255, 255, .5);
-    /* backdrop-filter: blur(3px); */
+    overflow: hidden;
 }
 
 
 .btn {
-    width: 24rem;
+    max-width: 24rem;
     margin: 2rem auto;
     display: flex;
     position: relative;
@@ -21,6 +26,7 @@
     background: rgba(0, 0, 0, 0.2);
     z-index: 1;
     box-shadow: 0 0 3rem var(--white);
+    overflow: hidden;
 
     & button {
         width: 100%;
@@ -49,7 +55,6 @@
 }
 
 
-
 .form-section {
     width: 200%;
     padding-top: 2rem;
@@ -60,9 +65,10 @@
     left: 0rem;
 
     &.form-section-move {
-        left: -33rem;
+        left: -100%;
     }
 }
+
 
 form {
     position: relative;
@@ -100,7 +106,6 @@ form {
         &:focus+i {
             color: var(--blue);
         }
-        
     }
 
     & i {
@@ -119,8 +124,31 @@ form {
     }
 }
 
+
 .divCheck {
     margin: 1rem 0 0 1rem;
     font-size: medium;
     color: #ffffff;
+}
+
+
+.alert{
+    display: flex;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 2rem;
+    background-color: rgb(255, 30, 30);
+    padding: 1rem;
+    border-radius: 1rem;
+    font-size: medium;
+    color: white;
+    opacity: 1;
+    animation: fadeOut1 linear forwards 0.3s;
+    animation-delay: 2s;
+}
+
+
+@keyframes fadeOut1 {
+    from { opacity: 1; }
+    to { opacity: 0; }
 }

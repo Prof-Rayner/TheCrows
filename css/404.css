@@ -1,0 +1,36 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    width: 80vw;
+    max-width: 35rem;
+    max-height: 45rem;
+    padding: 2rem;
+    border-radius: 1rem;
+    background-color: #FFF;
+    box-shadow: var(--white) 0 0 1rem;
+    overflow: hidden;
+}
+
+
+
+a button{
+    font-size: medium;
+    padding: 0 1rem;
+    border: none;
+    border-radius: 5rem;
+    margin: 1rem 4rem;
+    color: var(--white);
+    background-color: var(--blue);
+    cursor: pointer;
+}
