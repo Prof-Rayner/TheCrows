@@ -30,7 +30,7 @@
     <main class="container">
     
         <div class="profile"> <!-- Perfil -->
-            <div>
+            <div id="profile_div">
                 <div class="picture"> <!-- Foto de perfil -->
                     <img id="profileImage" src="./assets/imagens/perfil/perfil0.jpg">
                 </div>

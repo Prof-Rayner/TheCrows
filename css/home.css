@@ -18,59 +18,60 @@ body {
     justify-content: center;
     padding: 1rem;
     background-color: white;
+}
 
-    & > div{
-        display: flex;
-    }
+#profile_div{
+    display: flex;
+}
 
-    & .picture {
-        /* flex: 1 0 0rem; */
-        height: 100%;
-        max-width: 30%;
+.picture {
+    /* flex: 1 0 0rem; */
+    height: 100%;
+    max-width: 30%;
+}
+img {
+    width: 100%;
+    border-radius: 50%;
+    border: 2px solid black;
+    background-color: whitesmoke;
+}
 
-        & img {
-            width: 100%;
-            border-radius: 50%;
-            border: 2px solid black;
-            background-color: whitesmoke;
-        }
-    }
 
-    & .profile-user{
-        padding: 1rem;
-        display: flex;
-        flex-direction: column;
-        flex-grow: 1;
-        justify-content: space-around;
+.profile-user{
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-around;
+}
 
-        & .scoreBoard{
-            display: flex;
-            justify-content: space-around;
+.scoreBoard{
+    display: flex;
+    justify-content: space-around;
+}
+
+.scoreBoard h1{
+    text-align: center;
+}
+
+.scoreBoard span{
+    font-size: larger;
+}
         
-            & div h1{
-                text-align: center;
-            }
 
-            & div span{
-                font-size: larger;
-            }
-        }
+.profile-buttons{
+    display: flex;
+    justify-content: space-around;
+}
 
-        & .profile-buttons{
-            display: flex;
-            justify-content: space-around;
-
-            & a button{
-                font-size: medium;
-                padding: 0 1rem;
-                border: none;
-                border-radius: 5rem;
-                color: var(--white);
-                background-color: var(--blue);
-                cursor: pointer;
-            }
-        }
-    }
+.profile-buttons a button{
+    font-size: medium;
+    padding: 0 1rem;
+    border: none;
+    border-radius: 5rem;
+    color: var(--white);
+    background-color: var(--blue);
+    cursor: pointer;
 }
 
 
@@ -79,11 +80,11 @@ body {
     flex-direction: row;
     justify-content: space-around;
     padding: 0 2rem;
-    
-    & .feedItem .feedLine{
-        background-color: gray;
-        height: .3rem;
-    }
+}
+
+.feedItem .feedLine{
+    background-color: gray;
+    height: .3rem;
 }
 
 
@@ -101,29 +102,29 @@ body {
     color: white;
     cursor: pointer;
 
-    & .info{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        font-size: xxx-large;
-        backdrop-filter: grayscale(100%);
-        background-color: rgba(0, 0, 0, 0.7);
-    }
-
-    & img {
-        width: 100%;
-        height: 100%;
-    }
-
-    & .oculto{
-        display: none ;
-    }
-
+.info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    font-size: xxx-large;
+    backdrop-filter: grayscale(100%);
+    background-color: rgba(0, 0, 0, 0.7);
 }
+
+.info img {
+    width: 100%;
+    height: 100%;
+}
+
+.oculto{
+    display: none ;
+}
+
+
 
 
 .modal{
@@ -137,30 +138,30 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(5px) grayscale(100%);
     z-index: 99;
+}
     
-    & .conteudo{
-        width: 100vw;
-        max-width: 40rem;
-        margin: 0 2rem;
-        border-radius: 1rem;
-        display: flex;
-        flex-direction: column;
-        padding: 1rem 2rem;
-        background-color: whitesmoke;
+.conteudo{
+    width: 100vw;
+    max-width: 40rem;
+    margin: 0 2rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 2rem;
+    background-color: whitesmoke;
+}
 
-        & h1{
-            text-align: center;
-            padding: 1rem;
-        }
+.conteudo h1{
+    text-align: center;
+    padding: 1rem;
+}
 
-        & .foto1{
-            width: 100%;
+.foto1{
+    width: 100%;
+}
 
-            & img{
-                width: 100%;
-            }
-        }
-    }
+.foto1 img{
+    width: 100%;
 }
 
 
