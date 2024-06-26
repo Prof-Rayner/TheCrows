@@ -43,7 +43,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function removeRanking(usertype){
         const btnRanking = document.getElementById("btnRanking");
-        btnRanking.remove();
+        if (usertype == 2){
+            btnRanking.remove();
+        }
     }
 
     // JEFF
