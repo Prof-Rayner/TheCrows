@@ -1,9 +1,41 @@
 document.addEventListener("DOMContentLoaded", function () {
-    
     const nomeDoCorvo = document.getElementById("nomeDoCorvo");
     const foto = document.getElementById("fotoCorvo");
     const aviso = document.getElementById("aviso");
     const texto = document.getElementById("texto");
+
+
+    // solicitar nome
+    async function fetchPerfilData() {
+        try {
+            const response = await fetch("./api/getPerfil");
+            if (!response.ok) {
+                throw new Error('Erro ao carregar as informações do perfil.');
+            }
+            const data = await response.json();
+            const element = document.getElementById("username");
+            if (element) { element.textContent = data.username;}
+        } catch (error) {
+            console.log('erro no validar');
+            handleFetchError(error);
+        }
+    }
+
+    Promise.all([fetchPerfilData()])
+        .then(() => {
+            console.log("Perfil carregado com sucesso.");
+        })
+        .catch(error => {
+            console.error("Erro ao carregar perfil completo:", error);
+            alert("Erro ao carregar o perfil completo.");
+        });
+
+
+
+    // ----------------------
+
+
+
 
 
     function registroSucesso($id, $nome){
