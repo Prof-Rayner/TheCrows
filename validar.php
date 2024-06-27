@@ -29,8 +29,6 @@
 <body>
     <div class="backgroundImage"></div>
 
-    
-    <audio id="meuAudio" autoplay src="./assets/sound/theme.ogg"></audio>
     <canvas id="drawing_canvas"></canvas>
     <div id="container" class="container">
         <h1><span id="nomeDoCorvo">Nome do Corvo</span></h1>
