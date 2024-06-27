@@ -1,31 +1,134 @@
+/* @keyframes para animação da barra de progresso */
+@keyframes growProgressBar {
+    0%, 33% {
+        --pgPercentage: 0;
+    }
+    100% {
+        --pgPercentage: var(--value);
+    }
+}
+
+/* Propriedade personalizada para --pgPercentage */
+@property --pgPercentage {
+    syntax: '<number>';
+    inherits: false;
+    initial-value: 0;
+}
+
+/* Estilos para a barra de progresso */
+div[role="progressbar"] {
+    margin-left: 30%;
+    --size: 5rem;
+    --fg: #369;
+    --bg: #def;
+    --pgPercentage: var(--value);
+    animation: growProgressBar 3s 1 forwards;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background:
+        radial-gradient(closest-side, white 80%, transparent 0 99.9%, white 0),
+        conic-gradient(var(--fg) calc(var(--pgPercentage) * 1%), var(--bg) 0);
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: calc(var(--size) / 5);
+    color: var(--fg);
+}
+
+/* Pseudo-elemento para exibir o percentual dentro da barra de progresso */
+div[role="progressbar"]::before {
+    counter-reset: percentage var(--value);
+    content: counter(percentage) '%';
+}
+
+/* Estilos básicos e gerais para o corpo da página */
 body {
-    margin: 10px;
+    margin: 0;
     padding: 0;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f2f2f2;
+    color: #333;
 }
 
-#header{
+/* Estilos para o cabeçalho */
+#header {
     text-align: center;
-    justify-content: center;
-    background-color: green ;
+    background-color: green;
     padding: 12px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-#header h1{
+#header h1 {
     font-size: 40px;
+    margin: 0;
+    color: white;
 }
 
-#btnEncerrar{
+/* Estilos para o botão de encerrar */
+#btnEncerrar {
     background-color: #ccc;
-    font-size: 25px;
+    font-size: 20px;
     border-radius: 20px;
-    padding: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    padding: 12px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    margin-top: 10px;
 }
 
-table{
+/* Estilos para a tabela */
+table {
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 20px;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+table th,
+table td {
+    padding: 10px;
+    border: 1px solid #ddd;
     text-align: center;
-    justify-content: center;
-    padding: 50px;
-    font-size: 50px;
+    
+}
+
+table th {
+    background-color: #f2f2f2;
+}
+
+/* Media Query para tornar a tabela responsiva em telas menores */
+@media (max-width: 800px) {
+    table {
+        width: 100%;
+        max-width: none;
+    }
+}
+
+/* Estilos adicionais para ajustes em telas muito pequenas */
+@media (max-width: 600px) {
+    #header h1 {
+        font-size: 30px;
+    }
+
+    #btnEncerrar {
+        font-size: 18px;
+        padding: 10px 16px;
+    }
+
+    table th,
+    table td {
+        padding: 8px;
+    }
+
+    div[role="progressbar"] {
+        margin: 30%;
+        --size: 60px;
+        font-size: calc(var(--size) / 4);
+    }
 }
