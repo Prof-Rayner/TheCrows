@@ -26,12 +26,13 @@ let usuarioLogado = localStorage.getItem('usuarioLogado');
 
 btnIntro.addEventListener("click", () => {
   exibirTelaInicial(14400);
+  localStorage.setItem('usuarioLogado', true);
+
 });
 
 function iniciar() {
   if (!usuarioLogado) {
     console.log('iniciar');
-    localStorage.setItem('usuarioLogado', true);
   } else {
     intro.remove();
   }
