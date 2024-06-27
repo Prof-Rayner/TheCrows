@@ -1,0 +1,153 @@
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    max-width: 35rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: var(--white) 0 0 1rem;
+    background-color: rgba(255, 255, 255, .5);
+    overflow: hidden;
+}
+
+
+.btn {
+    max-width: 24rem;
+    margin: 2rem auto;
+    display: flex;
+    position: relative;
+    border-radius: 3rem;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    box-shadow: 0 0 3rem var(--white);
+    overflow: hidden;
+
+    & button {
+        width: 100%;
+        font-size: medium;
+        border: none;
+        background-color: transparent;
+        padding: 1rem;
+        color: var(--white);
+        cursor: pointer;
+    }
+
+    & .slider {
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        left: 0rem;
+        background-color: var(--blue);
+        border-radius: 3rem;
+        transition: all 0.5s ease-in-out;
+        z-index: -1;
+    }
+
+    & .moveslider {
+        left: 50%;
+    }
+}
+
+
+.form-section {
+    width: 200%;
+    padding-top: 2rem;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    transition: all 0.5s ease-in-out;
+    left: 0rem;
+
+    &.form-section-move {
+        left: -100%;
+    }
+}
+
+
+form {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 3rem;
+    left: 0;
+    transition: all 0.5s ease-in-out;
+
+    & button {
+        font-size: medium;
+        padding: 1rem;
+        border: none;
+        border-radius: 5rem;
+        color: var(--white);
+        background-color: var(--blue);
+        cursor: pointer;
+    }
+}
+
+
+.inputWithIcon {
+    position: relative;
+
+    & input {
+        width: 100%;
+        border: none;
+        border-radius: 5rem;
+        padding: 1rem 3rem;
+        font-size: medium;
+        outline: none;
+
+        &:focus+i {
+            color: var(--blue);
+        }
+    }
+
+    & i {
+        position: absolute;
+        left: 0;
+        height: 100%;
+        width: 3rem;
+        font-size: medium;
+
+        &::before {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
+
+
+.divCheck {
+    margin: 1rem 0 0 1rem;
+    font-size: medium;
+    color: #ffffff;
+}
+
+
+.alert{
+    display: flex;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 2rem;
+    background-color: rgb(255, 30, 30);
+    padding: 1rem;
+    border-radius: 1rem;
+    font-size: medium;
+    color: white;
+    opacity: 1;
+    animation: fadeOut1 linear forwards 0.3s;
+    animation-delay: 2s;
+}
+
+
+@keyframes fadeOut1 {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}

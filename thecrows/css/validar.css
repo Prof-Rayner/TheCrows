@@ -1,0 +1,67 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 80vw;
+    max-width: 35rem;
+    height: 70vh;
+    max-height: 45rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: #FFF;
+    box-shadow: var(--white) 0 0 1rem;
+    overflow: hidden;
+}
+
+
+img{
+    height: 100%;
+    width: 100%;
+}
+
+.img_teste{
+    animation: corvo_aparecendo 1s forwards 1;
+}
+
+
+@keyframes corvo_aparecendo {
+    0% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
+h1, h2, h3{
+    text-align: center;
+}
+
+
+.textinho {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#drawing_canvas{
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+}
