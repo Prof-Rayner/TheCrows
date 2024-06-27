@@ -29,13 +29,18 @@ body {
     height: 100%;
     max-width: 30%;
 }
-img {
+
+.picture  img {
     width: 100%;
     border-radius: 50%;
     border: 2px solid black;
     background-color: whitesmoke;
 }
 
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+}
 
 .profile-user{
     padding: 1rem;
@@ -57,7 +62,6 @@ img {
 .scoreBoard span{
     font-size: larger;
 }
-        
 
 .profile-buttons{
     display: flex;
@@ -73,7 +77,6 @@ img {
     background-color: var(--blue);
     cursor: pointer;
 }
-
 
 .feed{
     display: flex;
@@ -101,6 +104,7 @@ img {
     margin: 0.1rem;
     color: white;
     cursor: pointer;
+}
 
 .info{
     display: flex;
