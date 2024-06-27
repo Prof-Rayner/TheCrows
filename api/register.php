@@ -63,8 +63,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $_SESSION['usuario'] = array(
                         'ID' => $conn->lastInsertId(),
                     );
+
                     $_SESSION['success'] = 'Cadastrado com sucesso!';
-                    header('Location: ../index');
+                    $url = isset($_SESSION['redirecionar'])? $_SESSION['redirecionar'] : '../index';
+                    unset($_SESSION['redirecionar']);
+                    header("Location: $url");
                     exit;
 
                 } else {
