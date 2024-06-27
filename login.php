@@ -37,10 +37,10 @@ if (isset($_SESSION['error'])) {
         <div>
             <div>
                 <div id="conteudo">
-                    <button id="botao">Start</button>
+                    <button id="btnIntro">Start</button>
                 </div>
                 <audio id="audio" style="display: none;">
-                    <source src="./assets/sound/theme.ogg" type="audio/ogg">
+                    <source src="./assets/sound/theme.mp3" type="audio/mp3">
                 </audio>
                 <div id="gifContainer">
                     <img id="gif" src="./assets/gif/intro.gif" alt="intro" style="display: none;">
