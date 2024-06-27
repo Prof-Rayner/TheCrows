@@ -167,3 +167,20 @@ body {
 .modal.oculto{
     display: none !important;
 }
+
+
+
+.noto-sans-runic-regular {
+    font-family: "Noto Sans Runic", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+
+.nomeNordico{
+    font-family: "Nordico", sans-serif;
+}
+
+.nomeNormal{
+    font-family: "GodOfWar", sans-serif;
+}

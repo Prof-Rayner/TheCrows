@@ -11,6 +11,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<!-- runas font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Runic&display=swap" rel="stylesheet">
+
+<!-------------------------------------------------------------------------------------------------->
+
     <link rel="stylesheet" href="./css/default.css">
     <title>Home</title>
     
@@ -18,6 +26,7 @@
     <link rel="stylesheet" href="./css/home.css">
     <script defer src="./js/popup.js"></script>
     <script defer src="./js/perfil.js"></script>
+    <script defer src="./js/tradutor.js"></script>
     
     <!-- Snow Flake -->
     <link rel="stylesheet" href="./css/snowFlake.css">
@@ -58,8 +67,9 @@
                 </div>
             </div>
 
-            <div> <!-- Nome do Usuário -->
-                <h1 id="username">Nome</h1>
+            <div id="nome"> <!-- Nome do Usuário -->
+                <h1 id="username" class="noto-sans-runic-regular">Nome</h1>
+                <button id='runas'>Runas</button>
             </div>
         </div>
 
