@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Skranji:wght@400;700&display=swap');
 @font-face {
     font-family: "GodOfWar";
     src: url(../assets/GODOFWAR.TTF);
@@ -20,7 +19,6 @@ html {
     margin: 0;
     padding: 0; 
     box-sizing: border-box;
-    /* font-family: "Poppins", sans-serif; */
     font-family: "GodOfWar", sans-serif;
     
     user-select: none;
