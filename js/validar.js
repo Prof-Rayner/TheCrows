@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-
+    
     const nomeDoCorvo = document.getElementById("nomeDoCorvo");
     const foto = document.getElementById("fotoCorvo");
     const aviso = document.getElementById("aviso");
@@ -8,9 +8,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function registroSucesso($id, $nome){
         nomeDoCorvo.textContent = $nome;
-        $id = 1;
-        foto.setAttribute("src", "./assets/imagens/corvocapturado.png");
-        foto.classList.add("img_teste");
+        $id = crow.corvo.id;
+        foto.setAttribute("src", `./assets/imagens/corvo${$id}.jpg`);
         aviso.textContent = "PARABENS";
         // executar confetes
         var script = document.createElement('script');
@@ -18,15 +17,13 @@ document.addEventListener("DOMContentLoaded", function () {
         document.body.appendChild(script);
     }
     
-
     function jaRegistrado($id, $nome){
         nomeDoCorvo.textContent = "Corvo ja coletado";
-        $id = 1;
-        foto.setAttribute("src", "./assets/imagens/corvocapturado.png");
-        aviso.textContent = $nome;
+        $id = crow.corvo.id;
+        foto.setAttribute("src", `./assets/imagens/corvo${$id}.jpg`);
+        aviso.textContent = `Corvo ${$nome} já capturado, `;
         texto.textContent = "Esse corvo já foi destruido, continue procurando os demais.";
     }
-
 
     function corvoNaoEncontrado(){
         nomeDoCorvo.textContent = "Corvo Não Existe!";
@@ -34,7 +31,6 @@ document.addEventListener("DOMContentLoaded", function () {
         aviso.textContent = "CUIDADO";
         texto.textContent = "Não faça isso, pois pode acabar comendo só pipoca!";
     }
-
 
     if (crow.registro){
         registroSucesso(crow.corvo.id, crow.corvo.name);
