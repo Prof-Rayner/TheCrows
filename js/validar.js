@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function corvoNaoEncontrado(){
         nomeDoCorvo.textContent = "Corvo Não Existe!";
-        foto.setAttribute("src", "./assets/imagens/corvoNaoEncontrado.jpg");
+        foto.setAttribute("src", "./assets/imagens/corvoNaoEncontrado.png");
         aviso.textContent = "CUIDADO";
         texto.textContent = "Não faça isso, pois pode acabar comendo só pipoca!";
     }
