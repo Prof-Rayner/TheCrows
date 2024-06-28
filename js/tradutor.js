@@ -290,11 +290,6 @@
 // });
 
 
-
-const nome = document.getElementById('username');
-const btnRunas = document.getElementById('runas');
-
-btnRunas.addEventListener('click', () => {
-    nome.classList.remove("nomeNormal");
-    nome.classList.add("nomeNordico");
-})
+var nome = document.getElementById('nome');
+var letras = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+var runas = ['ᚨ','ᛒ','ᚲ','ᛞ','ᛖ','ᚠ','ᚷ','ᚺ','ᛁ','ᛃ','ᚲ','ᛚ','ᛗ','ᚾ','ᛟ','ᛈ','ᚲ','ᚱ','ᛊ','ᛏ','ᚢ','ᚢ','ᚹ','ᚲᛊ','ᛁ','ᛉ'];
