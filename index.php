@@ -73,6 +73,10 @@
         <div id="gallery" class="gallery">
         </div>
 
+        <div id="assinatura" class="assinatura">
+            nomes dos alunos
+        </div>
+
     </main>
 
     <div id='modalDica' class='modal oculto'>
