@@ -13,10 +13,10 @@ function openModal(id){
     let corvo = window.ListaCorvos[id-1]
     if (corvo['registrado'] == 1){
         cadeado.classList.add('oculto');
-        imagem.setAttribute("src", `./assets/imagens/corvo${corvo['id']}.png`);
+        imagem.setAttribute("src", `./assets/imagens/corvo${corvo['id']}.jpg`);
     }else{
         cadeado.classList.remove('oculto');
-        imagem.setAttribute("src", `./assets/imagens/corvo${corvo['id']}.png`);
+        imagem.setAttribute("src", `./assets/imagens/corvo${corvo['id']}.jpg`);
     }
     nomeTitulo.innerHTML = corvo['nome'];
     descricao.innerHTML = corvo['dica'];

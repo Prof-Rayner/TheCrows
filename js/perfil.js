@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
             let display = element.registrado == 1 ? "info oculto" : "info";
             galeria.innerHTML += `
             <div class='gallery-item' onclick='openModal(${id})'>
-                <img src='./assets/imagens/corvo${id}.png' alt='item-Corvo'>
+                <img src='./assets/imagens/corvo${id}.jpg' alt='item-Corvo'>
                 <h1 class='${display} bi bi-lock-fill'></h1>
             </div>
             `;
