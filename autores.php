@@ -37,7 +37,7 @@
             </div>
             <div class='gallery-item'>
                 <img src='./assets/autores/autor3.jpg'>
-                <h1 class='info'>Nikolas</h1>
+                <h1 class='info'>Nickolas</h1>
             </div>
             <div class='gallery-item'>
                 <img src='./assets/autores/autor4.jpg'>
@@ -69,11 +69,11 @@
             </div>
             <div class='gallery-item'>
                 <img src='./assets/autores/autor11.jpg'>
-                <h1 class='info'>Professores</h1>
+                <h1 class='info'>Docente Jeff</h1>
             </div>
             <div class='gallery-item'>
-                <img src='./assets/autores/autor112.jpg'>
-                <h1 class='info'>Professores</h1>
+                <img src='./assets/autores/autor12.jpg'>
+                <h1 class='info'>Docente Rocha</h1>
             </div>
             <div class='gallery-item'>
                 <img src='./assets/autores/autor13.jpg'>

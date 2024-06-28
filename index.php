@@ -74,7 +74,7 @@
         </div>
 
         <div class="assinatura">
-            <a href='autores'><button>RANKING</button></a>
+            <a href='autores'><button>AUTORES</button></a>
         </div>
 
     </main>
