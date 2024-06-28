@@ -79,7 +79,7 @@
         <div class='conteudo'>
             <h1 id='nomeTitulo'>Nome do Corvo</h1>
             <div class='gallery-item'>
-                <img src="./assets/imagens/corvo1.jpg" alt="item-Corvo">
+                <img id="imagemcorvo" alt="item-Corvo">
                 <h1 id='cadeado' class='info oculto bi bi-lock-fill'></h1>
             </div>
             <div>

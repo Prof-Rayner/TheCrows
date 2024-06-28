@@ -52,17 +52,16 @@ document.addEventListener("DOMContentLoaded", function () {
     function popularHOME(array){
         const galeria = document.getElementById("gallery");
         array.forEach(element => {
-            let id = 1;
+            let id = element.id;
             let display = element.registrado == 1 ? "info oculto" : "info";
             galeria.innerHTML += `
-            <div class='gallery-item' onclick='openModal(${element.id})'>
-                <img src='./assets/imagens/corvo${id}.jpg' alt='item-Corvo'>
+            <div class='gallery-item' onclick='openModal(${id})'>
+                <img src='./assets/imagens/corvo${id}.png' alt='item-Corvo'>
                 <h1 class='${display} bi bi-lock-fill'></h1>
             </div>
             `;
         });
     }
-
 
     function updateElementText(id, text) {
         const element = document.getElementById(id);
