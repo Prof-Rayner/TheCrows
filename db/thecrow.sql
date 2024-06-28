@@ -19,7 +19,8 @@ SET time_zone = "+00:00";
 
 -- Banco de dados: `thecrow`
 -- --------------------------------------------------------
-
+CREATE DATABASE IF NOT EXISTS `thecrow` CHARACTER SET utf8mb4 COLLATE=utf8mb4_unicode_ci;
+USE `thecrow`;
 
 -- Estrutura para tabela `crow`
 CREATE TABLE `crow` (

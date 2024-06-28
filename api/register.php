@@ -12,15 +12,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nome = trim($_POST['Nome']);
     $email = trim($_POST['Email']);
     $senha = trim($_POST['Senha']);
+    $conSenhar = trim($_POST['ConfirmarSenha']);
+
+// Hash da senha$password_hash = hashPassword($password);
 
     // Verificação básica se os campos não estão vazios
-    if (empty($nome) || empty($email) || empty($senha)) {
+    if (empty($nome) || empty($email) || empty($senha) || empty($conSenhar)) {
         $_SESSION['error'] = 'Todos os campos são obrigatórios.';
         header('Location: ../login');
         exit;
 
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $_SESSION['error'] = 'Formato de e-mail inválido.';
+        header('Location: ../login');
+        exit;
+
+    } elseif ($senha !== $conSenhar){
+        $_SESSION['error'] = 'As senhas não coincidem. Por favor, tente novamente..';
         header('Location: ../login');
         exit;
 
