@@ -18,7 +18,6 @@
     
     <!-- PARABENS -->
     <link rel="stylesheet" href="./css/validar.css">
-    <!-- <script defer src="./js/perfil.js"></script> -->
     <script defer src="./js/validar.js"></script>
     
     <!-- Snow Flake -->
