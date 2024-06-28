@@ -172,3 +172,7 @@ body {
 .modal.oculto{
     display: none !important;
 }
+
+#ajuste {
+    display: flex;
+}
