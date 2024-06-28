@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function registroSucesso($id, $nome){
         nomeDoCorvo.textContent = $nome;
         $id = crow.corvo.id;
-        foto.setAttribute("src", `./assets/imagens/corvo${$id}.jpg`);
+        foto.setAttribute("src", `./assets/imagens/corvo${$id}.png`);
         aviso.textContent = "PARABENS";
         // executar confetes
         var script = document.createElement('script');
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function jaRegistrado($id, $nome){
         nomeDoCorvo.textContent = "Corvo ja coletado";
         $id = crow.corvo.id;
-        foto.setAttribute("src", `./assets/imagens/corvo${$id}.jpg`);
+        foto.setAttribute("src", `./assets/imagens/corvo${$id}.png`);
         aviso.textContent = `Corvo ${$nome} já capturado, `;
         texto.textContent = "Esse corvo já foi destruido, continue procurando os demais.";
     }
