@@ -176,3 +176,9 @@ body {
 #ajuste {
     display: flex;
 }
+
+.assinatura{
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}

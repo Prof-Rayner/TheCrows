@@ -73,8 +73,8 @@
         <div id="gallery" class="gallery">
         </div>
 
-        <div id="assinatura" class="assinatura">
-            nomes dos alunos
+        <div class="assinatura">
+            <a href='autores'><button>RANKING</button></a>
         </div>
 
     </main>
