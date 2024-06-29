@@ -30,15 +30,6 @@ try {
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    // Função para obter informações do perfil
-    // function getUserPhoto($userId, $conn){
-    //     $sql = "SELECT id_photo FROM user WHERE id = :userId";
-    //     $stmt = $conn->prepare($sql);
-    //     $stmt->bindParam(':userId', $userId, PDO::PARAM_INT);
-    //     $stmt->execute();
-    //     return $stmt->fetch(PDO::FETCH_ASSOC);
-    // }
-
     // <JEFF
     // FUNCAO PARA PEGAR TODOS OS CORVOS REGISTRADO E OS CAPTURADOS EM UMA ARRAY
     function getCrowsResultByUser($userId, $conn){
@@ -76,21 +67,15 @@ try {
 
     // // Função para obter a classificação do usuário
     function getUserRank($userId, $conn){
-        $sql = "WITH ranked_data AS (
-                    SELECT
-                        id_user,
-                        COUNT(id_crow) AS quantidade_corvos,
-                        ROW_NUMBER() OVER (
-                            ORDER BY COUNT(id_crow) DESC, MIN(Date) ASC
-                        ) AS ranking
-                    FROM
-                        rank
-                    GROUP BY
-                        id_user
-                )
-                SELECT ranking
-                FROM ranked_data
-                WHERE id_user = :userId";
+        $sql = "WITH rankings AS (
+            SELECT row_number() OVER (ORDER BY capturados DESC, menor_tempo ASC) AS ranking, usuario, capturados,  SEC_TO_TIME(menor_tempo) AS tempo
+            FROM (
+                SELECT u.name AS usuario, COUNT(r.id) AS capturados,
+                AVG(TIMESTAMPDIFF(SECOND, (SELECT MIN(r2.date) FROM rank r2 WHERE r2.id_user = u.id), r.date)) AS menor_tempo
+                FROM user u LEFT JOIN rank r ON u.id = r.id_user GROUP BY u.id, u.name
+            ) subquery
+        )
+        SELECT ranking FROM rankings WHERE usuario = (SELECT name FROM user WHERE id = :userId);";
 
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':userId', $userId, PDO::PARAM_INT);
