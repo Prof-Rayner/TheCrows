@@ -44,7 +44,7 @@ if (isset($_SESSION['error'])) {
         <div>
             <div>
                 <div id="conteudo">
-                    <button id="btnIntro">Start</button>
+                    <button id="btnIntro">Toque para Iniciar</button>
                 </div>
                 <audio id="audio" style="display: none;">
                     <source src="./assets/sound/theme.mp3" type="audio/mp3">
